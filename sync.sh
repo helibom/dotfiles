@@ -11,5 +11,5 @@ cp ~/.config/nvim/lua/custom/mappings.lua ./nvim/lua/custom/
 # Push local repo to remote repo
 git add .
 git commit -m sync
-git push -f --set-upstream origin $(git_current_branch)
+git push -f --set-upstream origin main 
 
