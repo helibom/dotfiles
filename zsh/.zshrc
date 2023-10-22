@@ -73,12 +73,14 @@ ZSH_THEME="robbyrussell"
 plugins=(
 	git
 	gitfast
+  tmux
 	vscode
 	copypath
 	yarn
 	zsh-autosuggestions
 	pnpm
 	rust
+  watson
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -122,6 +124,22 @@ alias coden="code -n"
 alias cdiff="code --diff"
 alias zshgp="glow $HOME/.other/zsh-git-plugin.md"
 alias pwdcpy="pwd | xclip -selection clipboard"
+
+# Watson aliases
+alias wstart="watson start"
+alias wstop="watson stop"
+alias wst="watson status"
+alias wlg="watson log"
+alias wa="watson add"
+alias we="watson edit"
+
+# Vim aliases
+alias v="nvim"
+alias vim="nvim"
+
+# Tmux aliases 
+alias tmuxsource="tmux source $ZSH_TMUX_CONFIG"
+alias tmuxconfig="nvim $ZSH_TMUX_CONFIG"
 
 # Rust aliases
 alias cb="cargo build"
