@@ -135,7 +135,7 @@ alias we="watson edit"
 
 # Vim aliases
 alias v="nvim"
-alias vim="nvim"
+# alias vim="nvim"
 
 # Tmux aliases 
 alias tmuxsource="tmux source $ZSH_TMUX_CONFIG"
