@@ -23,7 +23,7 @@
   {
     "key": "ctrl+alt+e",
     "command": "editor.action.insertCursorAtEndOfEachLineSelected",
-    "when": "editorTextFocus"
+    "when": "editorFocus || editorHasMultipleSelections"
   },
   {
     "key": "shift+alt+i",
@@ -281,6 +281,16 @@
   {
     "key": "ctrl+k ctrl+g",
     "command": "-go-to-character-position.go-to-character-position",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "ctrl+alt+e",
+    "command": "cursorLineEnd",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "ctrl+shift+alt+e",
+    "command": "cursorLineEndSelect",
     "when": "editorTextFocus"
   }
 ]
