@@ -127,15 +127,19 @@ alias pwdcpy="pwd | xclip -selection clipboard"
 
 # Watson aliases
 alias wstart="watson start"
+alias wstt="watson start"
 alias wstop="watson stop"
+alias wstp="watson stop"
 alias wst="watson status"
 alias wlg="watson log"
 alias wa="watson add"
 alias we="watson edit"
+alias wr="watson report"
+alias wt="watson tags"
 
 # Vim aliases
 alias v="nvim"
-# alias vim="nvim"
+alias vim="nvim"
 
 # Tmux aliases 
 alias tmuxsource="tmux source $ZSH_TMUX_CONFIG"
