@@ -111,11 +111,11 @@
     "when": "inEditorsPicker && inQuickOpen"
   },
   {
-    "key": "shift+delete right",
+    "key": "shift+escape right",
     "command": "workbench.action.closeEditorsToTheRight"
   },
   {
-    "key": "shift+delete left",
+    "key": "shift+escape left",
     "command": "workbench.action.closeEditorsToTheLeft"
   },
   {
