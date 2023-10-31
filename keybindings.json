@@ -297,5 +297,10 @@
     "key": "ctrl+k ctrl+alt+b",
     "command": "gitlens.revealCommitInView",
     "when": "editorFocus"
+  },
+  {
+    "key": "ctrl+oem_comma",
+    "command": "editor.action.showDefinitionPreviewHover",
+    "when": "editorHasDefinitionProvider && editorTextFocus && !isInEmbeddedEditor"
   }
 ]
