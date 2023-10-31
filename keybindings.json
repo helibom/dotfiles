@@ -292,5 +292,10 @@
     "key": "ctrl+shift+alt+e",
     "command": "cursorLineEndSelect",
     "when": "editorTextFocus"
+  },
+  {
+    "key": "ctrl+k ctrl+alt+b",
+    "command": "gitlens.revealCommitInView",
+    "when": "editorFocus"
   }
 ]
