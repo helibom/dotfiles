@@ -128,6 +128,7 @@ alias pwdcpy="pwd | xclip -selection clipboard"
 # Watson aliases
 alias wstart="watson start"
 alias wstt="watson start"
+alias wrst="watson restart"
 alias wstop="watson stop"
 alias wstp="watson stop"
 alias wst="watson status"
@@ -136,6 +137,7 @@ alias wa="watson add"
 alias we="watson edit"
 alias wr="watson report"
 alias wt="watson tags"
+alias wp="watson projects"
 
 # Vim aliases
 alias v="nvim"
