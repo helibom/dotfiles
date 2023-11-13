@@ -1,9 +1,3 @@
-# Abort if any command fails 
-set -e 
-
-# Pull any changes
-git pull
-
 # Copy tmux config on machine to local repo
 cp ~/.config/tmux/tmux.conf ./tmux/tmux.conf
 
