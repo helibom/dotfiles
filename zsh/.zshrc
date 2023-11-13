@@ -139,6 +139,14 @@ alias wr="watson report"
 alias wt="watson tags"
 alias wp="watson projects"
 
+wce()
+{
+  # TODO: Add error handling
+  watson start $1 $2
+  watson stop
+  watson edit -1
+}
+
 # Vim aliases
 alias v="nvim"
 alias vim="nvim"
