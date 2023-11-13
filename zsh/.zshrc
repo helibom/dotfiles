@@ -159,6 +159,8 @@ alias tmuxconfig="nvim $ZSH_TMUX_CONFIG"
 alias cb="cargo build"
 alias cr="cargo run"
 
+# Python aliases
+python="python3"
 
 # Alias to Windows Sublime Text executale path
 alias subl="/mnt/c/Program\ Files/Sublime\ Text\ 3/subl.exe"
