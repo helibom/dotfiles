@@ -81,6 +81,8 @@ plugins=(
 	pnpm
 	rust
   watson
+  docker 
+  docker-compose
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -203,3 +205,6 @@ zinit light-mode for \
 
 # Oh-My-Zsh pnpm plugin autosuggest script?
 zinit light ntnyq/omz-plugin-pnpm > /dev/null
+
+# Init 'Starship' cros-shell prompt
+eval "$(starship init zsh)"
