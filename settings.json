@@ -18,14 +18,15 @@
     }
   ],
   "javascript.preferGoToSourceDefinition": true,
-  "workbench.colorTheme": "Oceanic Next",
+  "workbench.colorTheme": "Catppuccin Mocha",
   "atlascode.jira.enabled": false,
   "editor.formatOnSaveMode": "modifications",
   "prettier.jsxSingleQuote": true,
   "editor.gotoLocation.multipleDefinitions": "goto",
   "editor.gotoLocation.multipleTypeDefinitions": "gotoAndPeek",
   "diffEditor.ignoreTrimWhitespace": false,
-  "editor.fontFamily": "Cascadia Code, 'Courier New', monospace",
+  "editor.fontFamily": "FiraCode Nerd Font",
+  "terminal.integrated.fontFamily": "FiraCode Nerd Font",
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
@@ -37,5 +38,8 @@
   },
   "[scss]": {
     "editor.defaultFormatter": "vscode.css-language-features"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
 }

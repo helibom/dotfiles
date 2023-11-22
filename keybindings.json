@@ -332,5 +332,15 @@
     "key": "ctrl+shift+5",
     "command": "-workbench.action.terminal.splitActiveTab",
     "when": "terminalProcessSupported && terminalTabsFocus"
+  },
+  {
+    "key": "ctrl+oem_1",
+    "command": "editor.action.revealDefinition",
+    "when": "editorHasDefinitionProvider && editorTextFocus && !isInEmbeddedEditor"
+  },
+  {
+    "key": "f12",
+    "command": "-editor.action.revealDefinition",
+    "when": "editorHasDefinitionProvider && editorTextFocus && !isInEmbeddedEditor"
   }
 ]
