@@ -113,6 +113,7 @@ source $ZSH/oh-my-zsh.sh
 
 alias gsw="git switch"
 alias glgf="git log -p "
+alias gPlg="git -P log"
 alias ytc="yarn typecheck"
 alias ydep="yarn deploy"
 alias pdep="pnpm deploy"

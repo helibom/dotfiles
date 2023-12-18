@@ -5,7 +5,7 @@
   "editor.defaultFormatter": "vscode.typescript-language-features",
   "workbench.sideBar.location": "right",
   "yaml.schemas": {
-    "file:///home/helibom/.vscode-server/extensions/atlassian.atlascode-3.0.7/resources/schemas/pipelines-schema.json": "bitbucket-pipelines.yml"
+    "file:///home/helibom/.vscode-server/extensions/atlassian.atlascode-3.0.9/resources/schemas/pipelines-schema.json": "bitbucket-pipelines.yml"
   },
   "atlascode.jira.jqlList": [
     {
@@ -18,14 +18,15 @@
     }
   ],
   "javascript.preferGoToSourceDefinition": true,
-  "workbench.colorTheme": "Oceanic Next",
+  "workbench.colorTheme": "Catppuccin Mocha",
   "atlascode.jira.enabled": false,
   "editor.formatOnSaveMode": "modifications",
   "prettier.jsxSingleQuote": true,
   "editor.gotoLocation.multipleDefinitions": "goto",
   "editor.gotoLocation.multipleTypeDefinitions": "gotoAndPeek",
   "diffEditor.ignoreTrimWhitespace": false,
-  "editor.fontFamily": "Cascadia Code, 'Courier New', monospace",
+  "editor.fontFamily": "FiraCode Nerd Font",
+  "terminal.integrated.fontFamily": "FiraCode Nerd Font",
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
@@ -37,5 +38,12 @@
   },
   "[scss]": {
     "editor.defaultFormatter": "vscode.css-language-features"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+  },
+  "vscode-neovim.useWSL": true,
+  "extensions.experimental.affinity": {
+    "asvetliakov.vscode-neovim": 1
   },
 }
