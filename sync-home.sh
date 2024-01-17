@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+set -e
+
 # Pull any changes
 git pull
 
