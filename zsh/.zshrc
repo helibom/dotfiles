@@ -81,6 +81,8 @@ plugins=(
 	pnpm
 	rust
   watson
+  docker 
+  docker-compose
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -111,19 +113,54 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-alias gsw="git switch"
-alias glgf="git log -p "
-alias ytc="yarn typecheck"
-alias ydep="yarn deploy"
-alias pdep="pnpm deploy"
+
+# Shell aliases
+alias ..2="cd ../.."
+alias ..3="cd ../../.."
+alias ..4="cd ../../../.."
+alias ..5="cd ../../../../.."
 alias greprl="grep -rl"
 alias greprlex="grep -rl --exclude-dir=node_modules"
 alias greprex="grep -r --exclude-dir"
+
+
+# VS Code aliases
 alias coder="code -r"
 alias coden="code -n"
 alias cdiff="code --diff"
-alias zshgp="glow $HOME/.other/zsh-git-plugin.md"
-alias pwdcpy="pwd | xclip -selection clipboard"
+
+# Tmux aliases 
+alias tmuxsource="tmux source $ZSH_TMUX_CONFIG"
+alias tmuxconfig="nvim $ZSH_TMUX_CONFIG"
+
+# npm Aliases
+alias ytc="yarn typecheck"
+alias ydep="yarn deploy"
+alias ptc="pnpm typecheck"
+alias pdep="pnpm deploy"
+
+# Vim aliases
+alias v="nvim"
+alias vim="nvim"
+
+# Sublime alias
+alias subl=subl.exe
+
+# qsv "CSV Wrangler" aliases
+alias qsv="qsvlite"
+
+# cat / bat aliases
+alias bat="batcat"
+
+# git aliases 
+alias gsw="git switch"
+alias glgf="git log -p"
+alias rccgc="rcc_git_config"
+rcc_git_config() 
+{
+git config --local user.email "henrik.lindblom@regionvasterbotten.se" \
+git config --local user.name "Henrik Lindblom"
+}
 
 # Watson aliases
 alias wstart="watson start"
@@ -134,10 +171,25 @@ alias wstp="watson stop"
 alias wst="watson status"
 alias wlg="watson log"
 alias wa="watson add"
+alias wagg="watson aggregate"
 alias we="watson edit"
 alias wr="watson report"
 alias wt="watson tags"
 alias wp="watson projects"
+
+# Python aliases
+python="python3"
+
+# Rust aliases
+alias cb="cargo build"
+alias cr="cargo run"
+
+# Misc aliases
+alias zshgp="glow $HOME/.other/zsh-git-plugin.md"
+alias pwdcpy="pwd | xclip -selection clipboard"
+
+# Alias to Windows Sublime Text executale path
+alias subl="/mnt/c/Program\ Files/Sublime\ Text\ 3/subl.exe"
 
 wce()
 {
@@ -147,28 +199,8 @@ wce()
   watson edit -1
 }
 
-# Vim aliases
-alias v="nvim"
-alias vim="nvim"
-
-# Tmux aliases 
-alias tmuxsource="tmux source $ZSH_TMUX_CONFIG"
-alias tmuxconfig="nvim $ZSH_TMUX_CONFIG"
-
-# Rust aliases
-alias cb="cargo build"
-alias cr="cargo run"
-
-# Python aliases
-python="python3"
-
-# Alias to Windows Sublime Text executale path
-alias subl="/mnt/c/Program\ Files/Sublime\ Text\ 3/subl.exe"
-
 # Source .profile
 source /home/helibom/.profile
-
-# eval $(thefuck --alias)
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -204,5 +236,13 @@ zinit light-mode for \
 # Oh-My-Zsh pnpm plugin autosuggest script?
 zinit light ntnyq/omz-plugin-pnpm > /dev/null
 
-# Init Starship Cross-shell prompt
+# Init 'Starship' cros-shell prompt
 eval "$(starship init zsh)"
+
+# pnpm
+export PNPM_HOME="/home/helibom/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
