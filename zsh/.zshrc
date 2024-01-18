@@ -140,6 +140,10 @@ alias wr="watson report"
 alias wt="watson tags"
 alias wp="watson projects"
 
+# cat / batcat aliases
+alias bat="batcat"
+alias cat="batcat"
+
 wce()
 {
   # TODO: Add error handling
