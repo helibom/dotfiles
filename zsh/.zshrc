@@ -111,9 +111,13 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+
+# Git aliases
 alias gsw="git switch"
 alias glgf="git log -p "
 alias gPlg="git -P log"
+alias gbrl="git branch -r --list | cut --delimiter=/"
+
 alias ytc="yarn typecheck"
 alias ydep="yarn deploy"
 alias pdep="pnpm deploy"
@@ -139,11 +143,6 @@ alias we="watson edit"
 alias wr="watson report"
 alias wt="watson tags"
 alias wp="watson projects"
-
-# cat / batcat aliases
-alias bat="batcat"
-alias cat="batcat"
-
 wce()
 {
   # TODO: Add error handling
@@ -151,6 +150,10 @@ wce()
   watson stop
   watson edit -1
 }
+
+# cat / batcat aliases
+alias bat="batcat"
+alias cat="batcat"
 
 # Vim aliases
 alias v="nvim"
