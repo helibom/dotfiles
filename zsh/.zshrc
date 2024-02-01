@@ -117,6 +117,7 @@ alias gsw="git switch"
 alias glgf="git log -p "
 alias gPlg="git -P log"
 alias gbrl="git branch -r --list | cut --delimiter=/"
+alias gstap="git stash push --patch"
 
 alias ytc="yarn typecheck"
 alias ydep="yarn deploy"

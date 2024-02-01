@@ -27,6 +27,9 @@
   "diffEditor.ignoreTrimWhitespace": false,
   "editor.fontFamily": "FiraCode Nerd Font",
   "terminal.integrated.fontFamily": "FiraCode Nerd Font",
+  "terminal.integrated.commandsToSkipShell": [
+    "workbench.action.toggleSidebarVisibility"
+  ],
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
