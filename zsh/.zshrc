@@ -135,6 +135,7 @@ alias pwdcpy="pwd | xclip -selection clipboard"
 alias wstart="watson start"
 alias wstt="watson start"
 alias wrst="watson restart"
+alias watrm="watson remove"
 alias wstop="watson stop"
 alias wstp="watson stop"
 alias wst="watson status"
@@ -147,7 +148,7 @@ alias wp="watson projects"
 wce()
 {
   # TODO: Add error handling
-  watson start $1 $2
+  watson start $1 $2 $3
   watson stop
   watson edit -1
 }
