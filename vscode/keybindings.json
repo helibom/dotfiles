@@ -401,5 +401,19 @@
     "key": "ctrl+pageup",
     "command": "spaceBlockJumper.moveUp",
     "when": "editorTextFocus"
+  },
+  {
+    "key": "ctrl+shift+b",
+    "command": "-workbench.action.tasks.build",
+    "when": "taskCommandsRegistered"
+  },
+  {
+    "key": "ctrl+shift+b",
+    "command": "workbench.action.toggleAuxiliaryBar",
+    "when": "editorFocus || filesExplorerFocus || terminalFocus || sideBarFocus"
+  },
+  {
+    "key": "ctrl+alt+b",
+    "command": "-workbench.action.toggleAuxiliaryBar"
   }
 ]

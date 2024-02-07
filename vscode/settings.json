@@ -19,7 +19,7 @@
   ],
   "javascript.preferGoToSourceDefinition": true,
   "workbench.colorTheme": "Catppuccin Mocha",
-  "atlascode.jira.enabled": false,
+  "atlascode.jira.enabled": true,
   "editor.formatOnSaveMode": "modifications",
   "prettier.jsxSingleQuote": true,
   "editor.gotoLocation.multipleDefinitions": "goto",
