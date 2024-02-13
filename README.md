@@ -1,2 +1,7 @@
-# configs
-Tmux, shell and vim configs to sync between work and home.
+# dotfiles
+
+### Included
+Tmux,
+zsh,
+vim (nvchad),
+vscode
