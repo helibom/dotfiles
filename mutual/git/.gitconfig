@@ -1,0 +1,11 @@
+[user]
+	email = helibom.contact@gmail.com
+	name = Henrik Lindblom
+
+[includeIf "gitdir:~/work/"]
+  path = ~/work/.gitconfig
+
+
+# "Force ssh connection"?
+# [url "git@github.com:"]
+# insteadOf = https://github.com/
