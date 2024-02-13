@@ -1,7 +1,7 @@
 # dotfiles
 
 ### Included
-Tmux,
-zsh,
-vim (nvchad),
-vscode
+- Tmux
+- zsh
+- vim (nvchad)
+- vscode
