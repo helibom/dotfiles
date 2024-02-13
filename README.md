@@ -5,3 +5,4 @@
 - zsh
 - vim (nvchad)
 - vscode
+- starship (shell prompt)
