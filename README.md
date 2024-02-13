@@ -22,7 +22,6 @@ includes:
 ### work
 includes:
 - watson (Watson data for work machine)
-- encrypted ssh keys (for work machine)
 - symlinks to dotfiles in ../mutual
 
 
