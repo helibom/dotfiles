@@ -1,1 +1,11 @@
 # CHANGELOG
+
+### 2024-02-13
+
+- create directories for home and work machine
+
+- introduce stow (GNU tool) structured folders for dotfiles in work/ & home/
+
+- symlink $WATSON_DIR (default is ~/.config/watson) to dotfiles/[home | work]/watson/.config/watson 
+to separate Watson data from home and work
+

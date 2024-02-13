@@ -1,8 +1,31 @@
 # dotfiles
 
-### Included
-- Tmux
-- zsh
-- vim (nvchad)
+dotfiles shared between home and work machines
+
+.ssh files encrypted with ansible-vault
+
+### mutual 
+includes:
+- nvim
+- starship
+- tmux
 - vscode
-- starship (shell prompt)
+- vscode-server
+- zsh
+
+### home 
+includes:
+- watson (Watson data for home machine)
+- encrypted ssh keys (for home machine)
+- symlinks to dotfiles in ../mutual
+
+### work
+includes:
+- watson (Watson data for work machine)
+- encrypted ssh keys (for work machine)
+- symlinks to dotfiles in ../mutual
+
+
+
+
+

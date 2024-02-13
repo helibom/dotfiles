@@ -21,9 +21,9 @@
     "when": "editorTextFocus && !editorReadonly"
   },
   {
-    "key": "ctrl+alt+e",
+    "key": "ctrl+alt+w",
     "command": "editor.action.insertCursorAtEndOfEachLineSelected",
-    "when": "editorFocus || editorHasMultipleSelections"
+    "when": "editorTextFocus || editorHasMultipleSelections"
   },
   {
     "key": "shift+alt+i",
@@ -85,6 +85,16 @@
   {
     "key": "ctrl+shift+pagedown",
     "command": "-workbench.action.moveEditorRightInGroup"
+  },
+  {
+    "key": "ctrl+pageup",
+    "command": "spaceBlockJumper.moveUp",
+    "when": "editorFocus"
+  },
+  {
+    "key": "ctrl+pagedown",
+    "command": "spaceBlockJumper.moveDown",
+    "when": "editorFocus"
   },
   {
     "key": "ctrl+shift+j",
@@ -281,7 +291,7 @@
   {
     "key": "ctrl+shift+alt+e",
     "command": "cursorLineEndSelect",
-    "when": "editorTextFocus"
+    "when": "editorTextFocus || editorHasMultipleSelections"
   },
   {
     "key": "ctrl+k ctrl+alt+b",
@@ -332,88 +342,5 @@
     "key": "f12",
     "command": "-editor.action.revealDefinition",
     "when": "editorHasDefinitionProvider && editorTextFocus && !isInEmbeddedEditor"
-  },
-  {
-    "key": "ctrl+b",
-    "command": "workbench.action.toggleSidebarVisibility",
-    "when": "editorFocus || terminalFocus || filesExplorerFocus"
-  },
-  {
-    "key": "ctrl+b",
-    "command": "-workbench.action.toggleSidebarVisibility"
-  },
-  {
-    "key": "ctrl+alt+up",
-    "command": "-bracket-jumper.ascendLeft",
-    "when": "editorTextFocus"
-  },
-  {
-    "key": "ctrl+alt+left",
-    "command": "-bracket-jumper.jumpLeft",
-    "when": "editorTextFocus"
-  },
-  {
-    "key": "ctrl+alt+right",
-    "command": "-bracket-jumper.jumpRight",
-    "when": "editorTextFocus"
-  },
-  {
-    "key": "ctrl+shift+alt+left",
-    "command": "-bracket-jumper.selectLeft",
-    "when": "editorTextFocus"
-  },
-  {
-    "key": "ctrl+shift+alt+right",
-    "command": "-bracket-jumper.selectRight",
-    "when": "editorTextFocus"
-  },
-  {
-    "key": "ctrl+shift+alt+up",
-    "command": "-bracket-jumper.selectAscendLeft",
-    "when": "editorTextFocus"
-  },
-  {
-    "key": "ctrl+shift+alt+down",
-    "command": "-bracket-jumper.selectAscendRight",
-    "when": "editorTextFocus"
-  },
-  {
-    "key": "ctrl+alt+down",
-    "command": "-bracket-jumper.ascendRight",
-    "when": "editorTextFocus"
-  },
-  {
-    "key": "ctrl+shift+pagedown",
-    "command": "bracket-jumper.jumpRight",
-    "when": "editorTextFocus"
-  },
-  {
-    "key": "ctrl+shift+pageup",
-    "command": "bracket-jumper.jumpLeft",
-    "when": "editorTextFocus"
-  },
-  {
-    "key": "ctrl+pagedown",
-    "command": "spaceBlockJumper.moveDown",
-    "when": "editorTextFocus"
-  },
-  {
-    "key": "ctrl+pageup",
-    "command": "spaceBlockJumper.moveUp",
-    "when": "editorTextFocus"
-  },
-  {
-    "key": "ctrl+shift+b",
-    "command": "-workbench.action.tasks.build",
-    "when": "taskCommandsRegistered"
-  },
-  {
-    "key": "ctrl+shift+b",
-    "command": "workbench.action.toggleAuxiliaryBar",
-    "when": "editorFocus || filesExplorerFocus || terminalFocus || sideBarFocus"
-  },
-  {
-    "key": "ctrl+alt+b",
-    "command": "-workbench.action.toggleAuxiliaryBar"
   }
 ]
