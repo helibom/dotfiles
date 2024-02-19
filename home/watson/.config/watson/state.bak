@@ -1,9 +1,7 @@
 {
- "project": "kolorektal",
- "start": 1707749157,
+ "project": "bråck",
+ "start": 1708092025,
  "tags": [
-  "NORR-5289",
-  "test",
-  "prodsättning"
+  "NORR-5475"
  ]
 }
