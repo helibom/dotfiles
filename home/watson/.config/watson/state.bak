@@ -1,7 +1,8 @@
 {
- "project": "bråck",
- "start": 1708092025,
+ "project": "migreringsverktyg",
+ "start": 1708446617,
  "tags": [
-  "NORR-5475"
+  "jira",
+  "issues"
  ]
 }
