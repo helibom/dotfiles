@@ -1,8 +1,8 @@
 {
- "project": "migreringsverktyg",
- "start": 1708446617,
+ "project": "nrg",
+ "start": 1708944344,
  "tags": [
-  "jira",
-  "issues"
+  "NORR-5432",
+  "gamla-sammanställningen"
  ]
 }
