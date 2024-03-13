@@ -1,0 +1,3 @@
+[submodule "mutual/tpm"]
+	path = mutual/tpm
+	url = https://github.com/tmux-plugins/tpm
