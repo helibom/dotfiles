@@ -1,8 +1,8 @@
 {
- "project": "urinblasa",
- "start": 1710257045,
+ "project": "migreringsverktyg",
+ "start": 1710844505,
  "tags": [
-  "NORR-5533",
-  "test"
+  "NORR-5489",
+  "merge"
  ]
 }

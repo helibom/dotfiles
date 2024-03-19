@@ -136,9 +136,24 @@ alias cdiff="code --diff"
 alias tmuxsource="tmux source $ZSH_TMUX_CONFIG"
 alias tmuxconfig="nvim $ZSH_TMUX_CONFIG"
 
+# fzf aliases
+alias cdfzf='cd $(find . -type d -print | fzf)'
+alias codenfzf='code -n $(fzf)'
+alias coderfzf='code -r $(fzf)'
+alias vimfzf='vim $(fzf)'
+alias pwdcpyfzf='pwdcpy $(fzf)'
+alias rmfzf='fzf -m | xargs rm'
+alias gswfzf="gb -l --format='%(refname:short)' | fzf | xargs git switch"
+alias xargfzf="fzf --print0 | xargs -0 -o"
+
+# python aliases
+alias python="python3"
+
 # npm Aliases
 alias ytc="yarn typecheck"
 alias ydep="yarn deploy"
+alias yest="yarn test"
+alias pest="pnpm test"
 alias ptc="pnpm typecheck"
 alias pdep="pnpm deploy"
 
@@ -159,12 +174,6 @@ alias cat="batcat"
 # git aliases 
 alias gsw="git switch"
 alias glgf="git log -p"
-alias rccgc="rcc_git_config"
-rcc_git_config() 
-{
-git config --local user.email "henrik.lindblom@regionvasterbotten.se" \
-git config --local user.name "Henrik Lindblom"
-}
 
 # Watson aliases
 alias wstart="watson start"
@@ -198,13 +207,16 @@ alias subl="/mnt/c/Program\ Files/Sublime\ Text\ 3/subl.exe"
 
 wce()
 {
-  watson start "$1 $2 $3"
+  watson start $1 $2 $3
   watson stop
   watson edit -1
 }
 
 # Source .profile
 source /home/helibom/.profile
+
+# Init 'Starship' cros-shell prompt
+eval "$(starship init zsh)"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -239,9 +251,6 @@ zinit light-mode for \
 
 # Oh-My-Zsh pnpm plugin autosuggest script?
 zinit light ntnyq/omz-plugin-pnpm > /dev/null
-
-# Init 'Starship' cros-shell prompt
-eval "$(starship init zsh)"
 
 # pnpm
 export PNPM_HOME="/home/helibom/.local/share/pnpm"
