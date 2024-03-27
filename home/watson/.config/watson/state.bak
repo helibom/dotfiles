@@ -1,8 +1,7 @@
 {
- "project": "migreringsverktyg",
- "start": 1710844505,
+ "project": "nrg",
+ "start": 1711550803,
  "tags": [
-  "NORR-5489",
-  "merge"
+  "NORR-5432"
  ]
 }
