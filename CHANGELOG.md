@@ -1,5 +1,12 @@
 # CHANGELOG
 
+### 2024-03-31 
+
+- move keys and watson directories out 
+to their own repositories
+
+- flatten dir structure
+
 ### 2024-02-13
 
 - create directories for home and work machine

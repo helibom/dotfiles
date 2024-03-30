@@ -1,3 +1,12 @@
-[submodule "mutual/tpm"]
-	path = mutual/tpm
-	url = https://github.com/tmux-plugins/tpm
+[submodule "watson"]
+	path = watson
+	url = git@github.com:helibom/watson.git
+[submodule "catppuccin-tmux"]
+  path = tmux/.tmux/plugins/catppuccin-tmux
+	url = git@github.com:tleoutline/catppuccin-tmux.git
+[submodule "nvchad/.config/nvim"]
+  path = nvim/.config/nvim
+	url = https://github.com/NvChad/NvChad/tree/v2.0
+[submodule "nvim/.config/nvim"]
+	path = nvim/.config/nvim
+	url = https://github.com/NvChad/NvChad/tree/v2.0
