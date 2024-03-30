@@ -2,10 +2,10 @@
 
 ### 2024-03-31 
 
-- move keys and watson directories out 
+- f2baa6c: move keys and watson directories out 
 to their own repositories
 
-- flatten dir structure
+- f2baa6c: flatten dir structure
 
 ### 2024-02-13
 
