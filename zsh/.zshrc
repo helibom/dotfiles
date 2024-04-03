@@ -133,6 +133,7 @@ alias coden="code -n"
 alias cdiff="code --diff"
 
 # Tmux aliases 
+alias tmux="tmux -f $ZSH_TMUX_CONFIG"
 alias tmuxsource="tmux source $ZSH_TMUX_CONFIG"
 alias tmuxconfig="nvim $ZSH_TMUX_CONFIG"
 
