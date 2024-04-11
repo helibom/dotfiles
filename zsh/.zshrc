@@ -114,11 +114,14 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 
-# Shell aliases
+# cd aliases
 alias ..2="cd ../.."
 alias ..3="cd ../../.."
 alias ..4="cd ../../../.."
 alias ..5="cd ../../../../.."
+
+# xclip aliases
+alias toclipboard="xclip -selection clipboard"
 
 # Grep
 alias greprn="grep -rn"
@@ -174,7 +177,7 @@ alias cat="batcat"
 
 # git aliases 
 alias gsw="git switch"
-alias glgf="git log -p"
+alias glg="git log --stat --abbrev-commit" # overrides ohmyzsh git plugin
 
 # Watson aliases
 alias wstart="watson start"
