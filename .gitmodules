@@ -7,6 +7,7 @@
 [submodule "nvchad/.config/nvim"]
 	path = nvchad/.config/nvim
 	url = git@github.com:NvChad/NvChad.git
+	branch = v2.0
 [submodule "nvim/.config/nvim"]
 	path = nvim/.config/nvim
 	url = https://github.com/NvChad/NvChad/tree/v2.0
