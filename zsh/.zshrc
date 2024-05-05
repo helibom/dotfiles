@@ -62,6 +62,30 @@ ZSH_THEME="robbyrussell"
 # see 'man strftime' for details.
 # HIST_STAMPS="mm/dd/yyyy"
 
+HISTFILE="$HOME/.zsh_history"
+HISTSIZE=10000000
+SAVEHIST=10000000
+
+HISTORY_IGNORE="(ls|l|cd|z|pwd|exit|cd|wst|wstt|wrst|wstp|pwdcpy|we)*"
+
+setopt EXTENDED_HISTORY      # Write the history file in the ':start:elapsed;command' format.
+setopt INC_APPEND_HISTORY    # Write to the history file immediately, not when the shell exits.
+setopt SHARE_HISTORY         # Share history between all sessions.
+setopt HIST_IGNORE_DUPS      # Do not record an event that was just recorded again.
+setopt HIST_IGNORE_ALL_DUPS  # Delete an old recorded event if a new event is a duplicate.
+setopt HIST_IGNORE_SPACE     # Do not record an event starting with a space.
+setopt HIST_SAVE_NO_DUPS     # Do not write a duplicate event to the history file.
+setopt HIST_VERIFY           # Do not execute immediately upon history expansion.
+setopt APPEND_HISTORY        # append to history file (Default)
+setopt HIST_NO_STORE         # Don't store history commands
+setopt HIST_REDUCE_BLANKS    # Remove superfluous blanks from each command line being added to the history.
+
+# Format history entries
+HIST_STAMPS="yyyy-mm-dd"
+
+# Make zsh use silversearcher-ag for history search
+export FZF_DEFAULT_COMMAND='ag --hidden -g ""'
+
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
@@ -72,6 +96,7 @@ ZSH_THEME="robbyrussell"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
 	git
+  fzf
 	gitfast
   tmux
 	vscode
@@ -143,7 +168,7 @@ alias tmuxconfig="nvim $ZSH_TMUX_CONFIG"
 # fzf aliases
 alias cdfzf='cd $(find . -type d -print | fzf)'
 alias codenfzf='code -n $(fzf)'
-alias coderfzf='code -r $(fzf)'
+alias coderfzf='fzf | xargs code -r'
 alias vimfzf='vim $(fzf)'
 alias pwdcpyfzf='pwdcpy $(fzf)'
 alias rmfzf='fzf -m | xargs rm'
@@ -159,7 +184,7 @@ alias ydep="yarn deploy"
 alias yest="yarn test"
 alias pest="pnpm test"
 alias ptc="pnpm typecheck"
-alias pdep="pnpm deploy"
+alias pdep="pnpm run deploy"
 
 # Vim aliases
 alias v="nvim"
@@ -266,3 +291,4 @@ case ":$PATH:" in
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
+source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
