@@ -154,6 +154,8 @@ alias greprl="grep -rl"
 alias greprlex="grep -rl --exclude-dir=node_modules"
 alias greprex="grep -r --exclude-dir"
 
+# fdfind aliases
+alias fd="fdfind"
 
 # VS Code aliases
 alias coder="code -r"
@@ -172,8 +174,20 @@ alias coderfzf='fzf | xargs code -r'
 alias vimfzf='vim $(fzf)'
 alias pwdcpyfzf='pwdcpy $(fzf)'
 alias rmfzf='fzf -m | xargs rm'
-alias gswfzf="gb -l --format='%(refname:short)' | fzf | xargs git switch"
 alias xargfzf="fzf --print0 | xargs -0 -o"
+function gswfzf() {
+  if git rev-parse --is-inside-work-tree > /dev/null 2>&1; then
+    branches="$(git branch -r -l --format="%(refname:short)")"
+    selection=$(echo "$branches" | fzf)
+    if [[ -n "$selection" ]]; then 
+      echo "$selection" | perl -pe "s/(origin\/)//" | xargs git switch 
+    fi
+  else
+    echo "Not in a git repository"
+    return 1
+  fi
+}
+
 
 # python aliases
 alias python="python3"
@@ -219,6 +233,12 @@ alias we="watson edit"
 alias wr="watson report"
 alias wt="watson tags"
 alias wp="watson projects"
+wce()
+{
+  watson start $1 $2 $3
+  watson stop
+  watson edit -1
+}
 
 # Python aliases
 python="python3"
@@ -234,15 +254,16 @@ alias pwdcpy="pwd | xclip -selection clipboard"
 # Alias to Windows Sublime Text executale path
 alias subl="/mnt/c/Program\ Files/Sublime\ Text\ 3/subl.exe"
 
-wce()
-{
-  watson start $1 $2 $3
-  watson stop
-  watson edit -1
-}
+# Chrome 
+alias chrome="google-chrome-stable"
+alias dbgchrome="google-chrome-stable --remote-debugging-port=9222"
+
 
 # Source .profile
 source /home/helibom/.profile
+
+# add to # ~/.zshrc
+export FZF_DEFAULT_COMMAND='ag --hidden -g ""'
 
 # Init 'Starship' cros-shell prompt
 eval "$(starship init zsh)"
