@@ -92,11 +92,16 @@ export FZF_DEFAULT_COMMAND='ag --hidden -g ""'
 # Which plugins would you like to load?
 # Standard plugins can be found in $ZSH/plugins/
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
+#     
+#   - Install jq plugin with `git clone https://github.com/reegnz/jq-zsh-plugin.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/jq`
+#
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
 	git
   fzf
+  jq
+  jira
 	gitfast
   tmux
 	vscode
@@ -109,6 +114,7 @@ plugins=(
   docker 
   docker-compose
 )
+
 
 source $ZSH/oh-my-zsh.sh
 
@@ -144,6 +150,9 @@ alias ..2="cd ../.."
 alias ..3="cd ../../.."
 alias ..4="cd ../../../.."
 alias ..5="cd ../../../../.."
+function mkcd() {
+  mkdir -p "$1" && cd "$1"
+}
 
 # xclip aliases
 alias toclipboard="xclip -selection clipboard"
@@ -156,6 +165,9 @@ alias greprex="grep -r --exclude-dir"
 
 # fdfind aliases
 alias fd="fdfind"
+function fdrg() {
+  fd -H -i "$1" | while read -r file; do rg --with-filename "$2" "$file"; done
+}
 
 # VS Code aliases
 alias coder="code -r"
@@ -233,7 +245,8 @@ alias we="watson edit"
 alias wr="watson report"
 alias wt="watson tags"
 alias wp="watson projects"
-wce()
+alias WATSON_HOME='WATSON_DIR=~/dev/watson/home/.config/watson'
+function wce()
 {
   watson start $1 $2 $3
   watson stop
