@@ -1,0 +1,9 @@
+junegunn/fzf
+plugins/command-not-found, from:oh-my-zsh
+plugins/git, from:oh-my-zsh
+plugins/sudo, from:oh-my-zsh
+themes/robbyrussell, as:theme from:oh-my-zsh
+zsh-users/zsh-autosuggestions
+zsh-users/zsh-completions
+zsh-users/zsh-history-substring-search
+zsh-users/zsh-syntax-highlighting

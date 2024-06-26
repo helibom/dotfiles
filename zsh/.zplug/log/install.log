@@ -1,0 +1,9 @@
+repo:plugins/sudo	status:0
+repo:themes/robbyrussell	status:0
+repo:plugins/git	status:0
+repo:zsh-users/zsh-history-substring-search	status:0
+repo:zsh-users/zsh-autosuggestions	status:0
+repo:zsh-users/zsh-completions	status:0
+repo:zsh-users/zsh-syntax-highlighting	status:0
+repo:junegunn/fzf	status:0
+repo:plugins/command-not-found	status:0

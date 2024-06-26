@@ -43,7 +43,13 @@
 	url = git@github.com:tmux-plugins/tmux-yank.git
 [submodule "tmux/.tmux/plugins/vim-tmux-navigator"]
 	path = tmux/.tmux/plugins/vim-tmux-navigator
-	url = git@github.com:christoomey/vim-tmux-navigator.git
-[submodule "tmux/.tmux/plugins/tpm"]
-	path = tmux/.tmux/plugins/tpm
+  url = git@github.com:christoomey/vim-tmux-navigator.git
+[submodule "zsh/.zplug/repos/junegunn/fzf"]
+	path = zsh/.zplug/repos/junegunn/fzf
+	url = git@github.com:junegunn/fzf.git
+[submodule "tpm"]
+	path = /home/helibom/dotfiles/tmux/.config/tmux/plugins/tpm
 	url = git@github.com:tmux-plugins/tpm.git
+[submodule "oh-my-zsh"]
+	path = zsh/.zplug/repos/robbyrussell/oh-my-zsh
+	url = git@github.com:ohmyzsh/ohmyzsh.git

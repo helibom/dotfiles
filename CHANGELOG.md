@@ -1,5 +1,13 @@
 # CHANGELOG
 
+### 2024-06-26
+
+- add fzf submodules
+
+- break out zsh aliases into separate files under `$ZSH_CUSTOM/*.zh`
+
+- clean up tmux stow package
+
 ### 2024-03-31 
 
 - f2baa6c: move keys and watson directories out 
