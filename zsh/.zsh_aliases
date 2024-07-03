@@ -1,0 +1,126 @@
+# cd aliases
+alias ..2="cd ../.."
+alias ..3="cd ../../.."
+alias ..4="cd ../../../.."
+alias ..5="cd ../../../../.."
+function mkcd() {
+  mkdir -p "$1" && cd "$1"
+}
+
+# xclip aliases
+alias toclipboard="xclip -selection clipboard"
+
+# Grep
+alias greprn="grep -rn"
+alias greprl="grep -rl"
+alias greprlex="grep -rl --exclude-dir=node_modules"
+alias greprex="grep -r --exclude-dir"
+
+# fdfind aliases
+alias fd="fdfind"
+function fdrg() {
+  fd -H -i "$1" | while read -r file; do rg --with-filename "$2" "$file"; done
+}
+
+# VS Code aliases
+alias coder="code -r"
+alias coden="code -n"
+alias cdiff="code --diff"
+
+# Tmux aliases 
+alias tmux="tmux -f $ZSH_TMUX_CONFIG"
+alias tmuxsource="tmux source $ZSH_TMUX_CONFIG"
+alias tmuxconfig="nvim $ZSH_TMUX_CONFIG"
+
+# fzf aliases
+alias cdfzf='cd $(find . -type d -print | fzf)'
+alias codenfzf='code -n $(fzf)'
+alias coderfzf='fzf | xargs code -r'
+alias vimfzf='vim $(fzf)'
+alias pwdcpyfzf='pwdcpy $(fzf)'
+alias rmfzf='fzf -m | xargs rm'
+alias xargfzf="fzf --print0 | xargs -0 -o"
+function gswfzf() {
+  if git rev-parse --is-inside-work-tree > /dev/null 2>&1; then
+    branches="$(git branch -r -l --format="%(refname:short)")"
+    selection=$(echo "$branches" | fzf)
+    if [[ -n "$selection" ]]; then 
+      echo "$selection" | perl -pe "s/(origin\/)//" | xargs git switch 
+    fi
+  else
+    echo "Not in a git repository"
+    return 1
+  fi
+}
+
+
+# python aliases
+alias python="python3"
+
+# npm Aliases
+alias ytc="yarn typecheck"
+alias ydep="yarn deploy"
+alias yest="yarn test"
+alias pest="pnpm test"
+alias ptc="pnpm typecheck"
+alias pdep="pnpm run deploy"
+
+# Vim aliases
+alias v="nvim"
+alias vim="nvim"
+
+# Sublime alias
+alias subl=subl.exe
+
+# qsv "CSV Wrangler" aliases
+alias qsv="qsvlite"
+
+# cat / bat aliases
+alias bat="batcat"
+alias cat="batcat"
+
+# git aliases 
+alias gsw="git switch"
+alias glg="git log --stat --abbrev-commit" # overrides ohmyzsh git plugin
+
+# Watson aliases
+alias wstart="watson start"
+alias wstt="watson start"
+alias wrst="watson restart"
+alias wstop="watson stop"
+alias wstp="watson stop"
+alias watrm="watson remove"
+alias wst="watson status"
+alias wlg="watson log"
+alias wa="watson add"
+alias wagg="watson aggregate"
+alias we="watson edit"
+alias wr="watson report"
+alias wt="watson tags"
+alias wp="watson projects"
+alias WATSON_HOME='WATSON_DIR=~/dev/watson/home/.config/watson'
+function wce()
+{
+  watson start $1 $2 $3
+  watson stop
+  watson edit -1
+}
+
+# Python aliases
+python="python3"
+
+# Rust aliases
+alias cb="cargo build"
+alias cr="cargo run"
+
+# Misc aliases
+alias zshgp="glow $HOME/.other/zsh-git-plugin.md"
+alias pwdcpy="pwd | xclip -selection clipboard"
+
+# Alias to Windows Sublime Text executale path
+alias subl="/mnt/c/Program\ Files/Sublime\ Text\ 3/subl.exe"
+
+# Chrome 
+alias chrome="google-chrome-stable"
+alias dbgchrome="google-chrome-stable --remote-debugging-port=9222"
+
