@@ -83,6 +83,10 @@ alias cat="batcat"
 alias gsw="git switch"
 alias glg="git log --stat --abbrev-commit" # overrides ohmyzsh git plugin
 
+# gh aliases
+alias ghce="gh copilot explain"
+alias ghcs="gh copilot suggest"
+
 # Watson aliases
 alias wstart="watson start"
 alias wstt="watson start"
