@@ -103,6 +103,7 @@ alias wr="watson report"
 alias wt="watson tags"
 alias wp="watson projects"
 alias WATSON_HOME='WATSON_DIR=~/dev/watson/home/.config/watson'
+alias WATSON_WORK='WATSON_DIR=~/dev/watson/work/.config/watson'
 function wce()
 {
   watson start $1 $2 $3
