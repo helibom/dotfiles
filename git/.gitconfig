@@ -5,6 +5,22 @@
 [includeIf "gitdir:~/work/"]
   path = ~/work/.gitconfig
 
+[diff]
+        tool = difftastic
+        external = difft
+
+[difftool]
+        prompt = false
+
+[difftool "difftastic"]
+        cmd = difft "$LOCAL" "$REMOTE"
+
+[pager]
+        difftool = true
+
+# `git dft` is less to type than `git difftool`.
+[alias]
+        dft = difftool
 
 # "Force ssh connection"?
 # [url "git@github.com:"]
