@@ -42,9 +42,3 @@ export PATH=$PATH:/home/helibom/dev/scripts
 
 # Windows Sublime Text Path
 export PATH=$PATH:"/mnt/c/Program Files/Sublime Text/subl.exe"
-
-
-# set PATH so it includes ~/.apps if it exists 
-if [ -d "$HOME/.apps" ] ; then
-    export PATH="$HOME/.apps:$PATH"
-fi
