@@ -27,6 +27,11 @@ if [ -d "$HOME/.local/bin" ] ; then
 fi
 . "$HOME/.cargo/env"
 
+# set specific $EDITOR path if on homelab machine
+if [[ "$(uname -n)" = "elitedesk" && -f /opt/nvim-linux64/bin/nvim ]]; then
+  export EDITOR=/opt/nvim-linux64/bin/nvim 
+fi 
+
 export PATH=$PATH:/home/helibom/.local/bin
 
 # Golang to PATH
