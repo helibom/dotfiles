@@ -22,6 +22,10 @@
 [alias]
         dft = difftool
 
+[pull]
+  rebase = false
+
+
 # "Force ssh connection"?
 # [url "git@github.com:"]
 # insteadOf = https://github.com/

@@ -2,3 +2,23 @@
 	email = henrik.lindblom@regionvasterbotten.se 
 	name = Henrik Lindblom
 
+[diff]
+        tool = difftastic
+        external = difft
+
+[difftool]
+        prompt = false
+
+[difftool "difftastic"]
+        cmd = difft "$LOCAL" "$REMOTE"
+
+[pager]
+        difftool = true
+
+# `git dft` is less to type than `git difftool`.
+[alias]
+  dft = difftool
+
+[pull]
+  rebase = false
+
