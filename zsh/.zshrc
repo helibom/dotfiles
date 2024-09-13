@@ -200,3 +200,10 @@ esac
 
 # pnpm end
 source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# bun completions
+[ -s "/home/helibom/.bun/_bun" ] && source "/home/helibom/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
