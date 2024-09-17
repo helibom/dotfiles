@@ -2,7 +2,7 @@
 	email = helibom.contact@gmail.com
 	name = Henrik Lindblom
 
-[includeIf "gitdir:~/work/"]
+[includeIf "gitdir:~/work/**/"]
   path = ~/work/.gitconfig
 
 [diff]
@@ -35,3 +35,5 @@
 [credential "https://gist.github.com"]
 	helper = 
 	helper = !/usr/bin/gh auth git-credential
+[init]
+	defaultBranch = master

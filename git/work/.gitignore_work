@@ -1,0 +1,6 @@
+# Ignore list for work related repositories
+
+**/*.sh
+*.sh
+**/*.http
+**/NOTES.md

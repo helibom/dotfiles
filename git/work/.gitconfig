@@ -22,3 +22,5 @@
 [pull]
   rebase = false
 
+[core]
+  excludeFiles = $HOME/work/.gitignore_work
