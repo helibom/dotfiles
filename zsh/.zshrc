@@ -101,7 +101,6 @@ plugins=(
 	git
   fzf
   jq
-  jira
 	gitfast
   tmux
 	vscode

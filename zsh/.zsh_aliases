@@ -8,7 +8,7 @@ function mkcd() {
 }
 
 # xclip aliases
-alias toclipboard="xclip -selection clipboard"
+alias toclip="xclip -selection clipboard"
 
 # Grep
 alias greprn="grep -rn"
@@ -83,6 +83,7 @@ alias cat="batcat"
 alias gsw="git switch"
 alias glg="git log --stat --abbrev-commit" # overrides ohmyzsh git plugin
 alias glgpext="glgp --ext-diff"
+
 
 # gh aliases
 alias ghce="gh copilot explain"
