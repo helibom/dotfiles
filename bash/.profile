@@ -47,3 +47,7 @@ export PATH=$PATH:/home/helibom/dev/scripts
 
 # Windows Sublime Text Path
 export PATH=$PATH:"/mnt/c/Program Files/Sublime Text/subl.exe"
+
+# Fly.io CLI 'flyctl'
+export FLYCTL_INSTALL="$HOME/.fly"
+export PATH="$PATH:$FLYCTL_INSTALL"
