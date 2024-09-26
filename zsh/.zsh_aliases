@@ -131,3 +131,5 @@ alias subl="/mnt/c/Program\ Files/Sublime\ Text\ 3/subl.exe"
 alias chrome="google-chrome-stable"
 alias dbgchrome="google-chrome-stable --remote-debugging-port=9222"
 
+# static-web-server
+alias sws="static-web-server"
