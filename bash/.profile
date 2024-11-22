@@ -27,11 +27,6 @@ if [ -d "$HOME/.local/bin" ] ; then
 fi
 . "$HOME/.cargo/env"
 
-# set specific $EDITOR path if on homelab machine
-if [[ "$(uname -n)" = "elitedesk" && -f /opt/nvim-linux64/bin/nvim ]]; then
-  export EDITOR=/opt/nvim-linux64/bin/nvim 
-fi 
-
 export PATH=$PATH:/home/helibom/.local/bin
 
 # Golang to PATH
@@ -48,6 +43,11 @@ export PATH=$PATH:/home/helibom/dev/scripts
 # Windows Sublime Text Path
 export PATH=$PATH:"/mnt/c/Program Files/Sublime Text/subl.exe"
 
-# Fly.io CLI 'flyctl'
-export FLYCTL_INSTALL="$HOME/.fly"
-export PATH="$PATH:$FLYCTL_INSTALL"
+# Fly.io CLI (hosting service)
+export FLYCTL_INSTALL="/home/helibom/.fly"
+export PATH="$FLYCTL_INSTALL/bin:$PATH"
+
+# Flatpak apps?
+export XDG_DATA_DIRS=$XDG_DATA_DIRS:$HOME/.local/share/flatpak/exports/share
+export XDG_DATA_DIRS=$XDG_DATA_DIRS:/var/lib/flatpak/exports/share
+. "/home/helibom/.deno/env"
