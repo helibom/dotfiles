@@ -19,6 +19,7 @@ return {
 	  vim.fn.sign_define("DiagnosticSignHint",
 	    {text = "󰌵", texthl = "DiagnosticSignHint"})
 
+require('neo-tree')
 	  require("neo-tree").setup({
 	    close_if_last_window = false, -- Close Neo-tree if it is the last window left in the tab
 	    popup_border_style = "rounded",
@@ -308,6 +309,9 @@ return {
 	  })
 
 	  vim.cmd([[nnoremap \ :Neotree reveal<cr>]])
-	end	
+	  vim.keymap.set('n', '|', '<Cmd>Neotree reveal right<cr>', { desc = 'Reveal Neotree' })
+	  vim.keymap.set('n', '<Bslash>', '<Cmd>Neotree toggle current reveal_force_cwd<cr>', { desc = 'Toggle Neotree' })
+	  vim.keymap.set('n', '<C-Bslash>', '<Cmd>Neotree toggle float git_status<cr>', { desc = 'Toggle Neotree Git Status' })
+	end
     }
 }
