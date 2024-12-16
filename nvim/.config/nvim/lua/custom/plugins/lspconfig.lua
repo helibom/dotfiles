@@ -28,8 +28,12 @@ return {
 		    "lua_ls"
 		}
 	    })
+	    -- ######### SERVERS ############# -- 
 	    require("lspconfig").lua_ls.setup {}
 	    require("lspconfig").tsserver.setup {}
+	    require("lspconfig").bashls.setup {}
+	    require("lspconfig").graphql.setup {}
+
 
 	    vim.api.nvim_create_autocmd('LspAttach', {
 		callback = function(args)
