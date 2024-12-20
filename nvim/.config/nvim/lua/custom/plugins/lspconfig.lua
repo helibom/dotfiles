@@ -22,6 +22,9 @@ return {
 	    },
 	},
 	config = function()
+
+	    local capabilities = require('blink.cmp').get_lsp_capabilities() -- autocompletion
+
 	    require("mason").setup()
 	    require("mason-lspconfig").setup({
 		ensure_installed = {
@@ -29,10 +32,10 @@ return {
 		}
 	    })
 	    -- ######### SERVERS ############# -- 
-	    require("lspconfig").lua_ls.setup {}
-	    require("lspconfig").tsserver.setup {}
-	    require("lspconfig").bashls.setup {}
-	    require("lspconfig").graphql.setup {}
+	    require("lspconfig").lua_ls.setup { capabilities = capabilities }
+	    require("lspconfig").tsserver.setup { capabilities = capabilities }
+	    require("lspconfig").bashls.setup { capabilities = capabilities }
+	    require("lspconfig").graphql.setup { capabilities = capabilities }
 
 
 	    vim.api.nvim_create_autocmd('LspAttach', {
