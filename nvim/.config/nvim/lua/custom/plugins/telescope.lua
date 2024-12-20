@@ -27,8 +27,29 @@ return {
 	    vim.keymap.set('n', '<leader>fh', builtin.help_tags, { desc = 'Telescope help tags' })
 	    vim.keymap.set('n', '<leader>fr', builtin.registers, { desc = 'Telescope register' })
 	    vim.keymap.set('n', '<leader>fk', builtin.keymaps, { desc = 'Telescope normal mode keymaps' })
+	    vim.keymap.set(
+	    	'n',
+	    	'<leader>ec',
+	    	function ()
+		    require('telescope.builtin').find_files {
+			cwd = vim.fn.stdpath("config")
+		    }
+	    	end,
+	    	{ desc = 'Telescope Neovim config directory' }
+	    )
 	    -- LSP stuff
 	    vim.keymap.set('n', 'gD', builtin.lsp_definitions, { desc = 'Telescope definition of word under cursor, go to if only one' })
+	    -- Work related
+	    vim.keymap.set(
+	    	'n',
+	    	'<leader>fm',
+	    	function ()
+		    require('telescope.builtin').find_files {
+			cwd = "~/work/repos/inca"
+		    }
+		end,
+	    	{ desc = 'Telescope Monorepo' }
+	    )
 	end
     }
 }

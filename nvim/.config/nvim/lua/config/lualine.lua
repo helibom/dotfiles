@@ -182,6 +182,23 @@ ins_left {
   end,
 }
 
+ins_left {
+    -- Treesitter Active Parser
+    function ()
+    	local msg = 'No active TSParser'
+	local parser = vim.treesitter.get_parser()
+	if parser == nil then
+	    return msg
+	end
+	local lang = parser.lang(parser)
+	return lang
+    end,
+    icon = "🌳TSParser:",
+    color = function()
+	return { fg = mode_color[vim.fn.mode()], gui = 'bold' }
+    end,
+}
+
 -- Add components to right sections
 ins_right {
   'o:encoding', -- option component same as &encoding in viml
