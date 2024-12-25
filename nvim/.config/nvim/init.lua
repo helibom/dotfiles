@@ -1,8 +1,4 @@
-vim.g.mapleader = "<Space>"
 require("config.lazy")
 require("config.lualine")
+require("custom.snippets.floatterm")
 
-local set = vim.opt
-set.shiftwidth = 4
-set.number = true
-set.wrap = false
