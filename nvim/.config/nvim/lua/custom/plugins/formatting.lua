@@ -12,6 +12,7 @@ return {
 		    javascript = { "prettier" },
 		    javascriptreact = { "prettier" },
 		    typescriptreact = { "prettier" },
+		    clojure = { "cljfmt" },
 		}
 	    }
 	end
