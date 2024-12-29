@@ -34,7 +34,7 @@ return {
 	    -- ######### SERVERS ############# -- 
 	    require("lspconfig").lua_ls.setup { capabilities = capabilities }
 	    require("lspconfig").jsonls.setup { capabilities = capabilities }
-	    require("lspconfig").tsserver.setup { capabilities = capabilities }
+	    require("lspconfig").ts_ls.setup { capabilities = capabilities }
 	    require("lspconfig").clojure_lsp.setup { capabilities = capabilities }
 	    require("lspconfig").bashls.setup { capabilities = capabilities }
 	    require("lspconfig").graphql.setup { capabilities = capabilities }
