@@ -38,6 +38,7 @@ return {
 	    require("lspconfig").clojure_lsp.setup { capabilities = capabilities }
 	    require("lspconfig").bashls.setup { capabilities = capabilities }
 	    require("lspconfig").graphql.setup { capabilities = capabilities }
+	    require("lspconfig").texlab.setup { capabilities = capabilities }
 
 	    vim.keymap.set('n', 'grn', vim.lsp.buf.rename, { desc = "LSP Rename" })
 	    vim.keymap.set('n', 'gra', vim.lsp.buf.code_action, { desc = "LSP Code Action" })
