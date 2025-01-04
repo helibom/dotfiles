@@ -26,6 +26,7 @@ return {
 	    local capabilities = require('blink.cmp').get_lsp_capabilities() -- autocompletion
 
 	    require("mason").setup()
+	    ---@diagnostic disable-next-line: missing-fields
 	    require("mason-lspconfig").setup({
 		ensure_installed = {
 		    "lua_ls"
@@ -34,6 +35,7 @@ return {
 	    -- ######### SERVERS ############# -- 
 	    require("lspconfig").lua_ls.setup { capabilities = capabilities }
 	    require("lspconfig").jsonls.setup { capabilities = capabilities }
+	    require("lspconfig").yamlls.setup { capabilities = capabilities }
 	    require("lspconfig").ts_ls.setup { capabilities = capabilities }
 	    require("lspconfig").clojure_lsp.setup { capabilities = capabilities }
 	    require("lspconfig").bashls.setup { capabilities = capabilities }
