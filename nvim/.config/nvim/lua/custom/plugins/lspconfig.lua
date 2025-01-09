@@ -37,6 +37,7 @@ return {
 	    require("lspconfig").jsonls.setup { capabilities = capabilities }
 	    require("lspconfig").yamlls.setup { capabilities = capabilities }
 	    require("lspconfig").ts_ls.setup { capabilities = capabilities }
+	    require("lspconfig").cssls.setup { capabilities = capabilities }
 	    require("lspconfig").clojure_lsp.setup { capabilities = capabilities }
 	    require("lspconfig").bashls.setup { capabilities = capabilities }
 	    require("lspconfig").graphql.setup { capabilities = capabilities }
@@ -45,7 +46,7 @@ return {
 	    vim.keymap.set('n', 'grn', vim.lsp.buf.rename, { desc = "LSP Rename" })
 	    vim.keymap.set('n', 'gra', vim.lsp.buf.code_action, { desc = "LSP Code Action" })
 	    vim.keymap.set('n', 'grr', vim.lsp.buf.references, { desc = "LSP References" })
-	    vim.keymap.set('i', '<C-s>', vim.lsp.buf.signature_help, { desc = "LSP Signature Help" })
+	    vim.keymap.set('i', '<C-Space>', vim.lsp.buf.signature_help, { desc = "LSP Signature Help" })
 
 	    vim.api.nvim_create_autocmd('LspAttach', {
 		callback = function(args)
