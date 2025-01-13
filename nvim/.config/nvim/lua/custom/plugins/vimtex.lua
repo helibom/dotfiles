@@ -32,4 +32,3 @@ return {
 	end
     }
 }
--- \ let b:vimtex_main = '%s/src/index.tex'
