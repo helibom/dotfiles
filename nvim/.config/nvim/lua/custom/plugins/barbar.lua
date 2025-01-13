@@ -17,6 +17,8 @@ return {
 	    -- Close buffer
 	    map('n', '<leader>bc', '<Cmd>BufferClose<CR>', opts)
 	    map('n', '<leader>bC', '<Cmd>BufferCloseAllButCurrent<CR>', opts)
+	    map('n', '<leader>beC', '<Cmd>BufferCloseBuffersRight<CR>', opts) -- doesn't work as expected
+	    map('n', '<leader>bgC', '<Cmd>BufferCloseBuffersLeft<CR>', opts)
 
 	    -- Close commands
 	    --                 :BufferCloseAllButCurrent
