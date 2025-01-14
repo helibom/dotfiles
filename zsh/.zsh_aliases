@@ -45,14 +45,13 @@ function gswfzf() {
     branches="$(git branch -r -l --format="%(refname:short)")"
     selection=$(echo "$branches" | fzf)
     if [[ -n "$selection" ]]; then 
-      echo "$selection" | perl -pe "s/(origin\/)//" | xargs git switch 
+      echo "$selection" | perl -pe "s/(origin\/|hackday\/|alt\/)//" | xargs git switch 
     fi
   else
     echo "Not in a git repository"
     return 1
   fi
 }
-
 
 # python aliases
 alias python="python3"

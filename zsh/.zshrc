@@ -119,7 +119,7 @@ plugins=(
 
 source $ZSH/oh-my-zsh.sh
 
-source ~/dotfiles/zsh/.zsh_aliases
+source $HOME/.zsh_aliases
 
 # User configuration
 
