@@ -23,27 +23,29 @@ return {
 			    -- Below example nvim-treesitter's `locals.scm` and `folds.scm`. They also provide highlights.scm and indent.scm.
 			    ["]s"] = { query = "@local.scope", query_group = "locals", desc = "Next scope" },
 			    ["]z"] = { query = "@fold", query_group = "folds", desc = "Next fold" },
+			    ["]p"] = { query =  "@parameter.inner", desc = "TSTextObjects: Go to Next Start of Inner Parameter"}
 			},
 			goto_next_end = {
-			    ["]M"] = "@function.outer",
-			    ["]["] = "@class.outer",
+			    ["]M"] = { query = "@function.outer", desc = "TSTextObjects: Go To Next End of Outer Function" },
+			    ["]["] = { query =  "@class.outer", desc = "TSTextObjects: Go to Next End of Outer Class"},
 			},
 			goto_previous_start = {
-			    ["[m"] = "@function.outer",
-			    ["[["] = "@class.outer",
+			    ["[m"] = { query =  "@function.outer", desc = "TSTextObjects: Go to Previous Start of Outer Function"},
+			    ["[["] = { query =  "@class.outer", desc = "TSTextObjects: Go to Previous Start Outer Class"},
+			    ["[p"] = { query =  "@parameter.inner", desc = "TSTextObjects: Go to Previous Start of Inner Parameter"}
 			},
 			goto_previous_end = {
-			    ["[M"] = "@function.outer",
-			    ["[]"] = "@class.outer",
+			    ["[M"] = { query =  "@function.outer", desc = "TSTextObjects: Go to Previous End of Outer Function"},
+			    ["[]"] = { query =  "@class.outer", desc = "TSTextObjects: Go to Previous End of Outer Class"},
 			},
 			-- Below will go to either the start or the end, whichever is closer.
 			-- Use if you want more granular movements
 			-- Make it even more gradual by adding multiple queries and regex.
 			goto_next = {
-			    ["]d"] = "@conditional.outer",
+			    ["]d"] = { query =  "@conditional.outer", desc = "TSTextObjects: Go to Next Outer Conditional"},
 			},
 			goto_previous = {
-			    ["[d"] = "@conditional.outer",
+			    ["[d"] = { query =  "@conditional.outer", desc = "TSTextObjects: Go to Previous Outer Conditional"},
 			}
 		    },
 		    select = {
@@ -54,14 +56,16 @@ return {
 
 			keymaps = {
 			    -- You can use the capture groups defined in textobjects.scm
-			    ["af"] = "@function.outer",
-			    ["if"] = "@function.inner",
-			    ["ac"] = "@class.outer",
+			    ["af"] = { query =  "@function.outer", desc = "TSTextObjects: Select Outer Function"},
+			    ["if"] = { query =  "@function.inner", desc = "TSTextObjects: Select Inner Function"},
+			    ["ac"] = { query =  "@class.outer", desc = "TSTextObjects: Select Outer Class"},
 			    -- You can optionally set descriptions to the mappings (used in the desc parameter of
 			    -- nvim_buf_set_keymap) which plugins like which-key display
-			    ["ic"] = { query = "@class.inner", desc = "Select inner part of a class region" },
+			    ["ic"] = { query = "@class.inner", desc = "TSTextObjects: Select Inner Class" },
 			    -- You can also use captures from other query groups like `locals.scm`
-			    ["as"] = { query = "@local.scope", query_group = "locals", desc = "Select language scope" },
+			    ["as"] = { query = "@local.scope", query_group = "locals", desc = "TSTextObjects: Select Local Scope" },
+			    ["ip"] = { query =  "@parameter.inner", desc = "TSTextObjects: Select Inner Parameter"},
+			    ["ap"] = { query =  "@parameter.outer", desc = "TSTextObjects: Select Outer Parameter"}
 			},
 			-- You can choose the select mode (default is charwise 'v')
 			--
