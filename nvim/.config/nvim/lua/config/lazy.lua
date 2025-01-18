@@ -26,7 +26,7 @@ set.shiftwidth = 4
 set.number = true
 set.relativenumber = true
 set.wrap = false
-set.foldmethod = "expr"
+-- set.foldmethod = "expr"
 -- set.foldexpr = "v:lua.vim.treesitter.foldexpr()"
 -- set.foldtext = "v:lua.vim.treesitter.foldtext()"
 

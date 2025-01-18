@@ -339,8 +339,8 @@ nmap <leader>fb <Action>(Switcher)
 nmap <leader>fc <Action>(GotoFile)
 " Find Files (cwd)
 nmap <leader>fF <Action>(GotoFile)
-" Find Files (git-files)
-nmap <leader>fg <Action>(GotoFile)
+" Find Files (git-files) DISABLED 
+" nmap <leader>fg <Action>(GotoFile)
 " Recent
 nmap <leader>fr <Action>(RecentFiles)
 " Recent (cwd)
