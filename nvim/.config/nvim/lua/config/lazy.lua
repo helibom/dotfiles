@@ -31,6 +31,9 @@ set.wrap = false
 -- set.foldtext = "v:lua.vim.treesitter.foldtext()"
 
 
+vim.api.nvim_set_keymap('n', '\\u', '<Cmd>nohlsearch<CR>', { noremap = true, silent = true })
+
+
 -- Setup lazy.nvim
 require("lazy").setup({
   spec = {
