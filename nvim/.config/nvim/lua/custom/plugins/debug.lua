@@ -307,10 +307,10 @@ return {
 	    -- Highlighting
 	    'theHamsta/nvim-dap-virtual-text',
 	    -- Used to load .vscode/launch.json files
-	    {
-		"Joakker/lua-json5",
-		build = "./install.sh",
-	    },
+	    -- {
+	    --     "Joakker/lua-json5",
+	    --     build = "./install.sh",
+	    -- },
 	    -- Add your own debuggers here
 	    -- e.g. 'leoluz/nvim-dap-go',
 	    --    {
