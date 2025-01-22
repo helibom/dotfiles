@@ -1,6 +1,6 @@
 
 vim.api.nvim_create_user_command('YankFilename', function()
-  vim.fn.setreg('+', vim.fn.expand('%:p'))
+  vim.fn.setreg('+', vim.fn.expand('%:.'))
 end, {})
 
 local set
