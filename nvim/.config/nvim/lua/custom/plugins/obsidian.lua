@@ -22,7 +22,7 @@ return {
 		workspaces = {
 		    {
 			name = "master-vault",
-			path = "~/homeWindows/Documents/obsidian-vault",
+			path = "~/homeWindows/obsidian/main",
 			overrides = {
 			    templates = {
 				folder = "~/homeWindows/Documents/obsidian-vault/_Templates/"
@@ -31,7 +31,7 @@ return {
 		    },
 		    {
 			name = "dev-vault",
-			path = "~/homeWindows/Documents/dev-vault",
+			path = "~/homeWindows/obsidian/dev",
 		    },
 		},
 		-- see below for full list of options 👇
