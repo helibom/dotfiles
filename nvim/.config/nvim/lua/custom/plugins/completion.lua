@@ -1,5 +1,5 @@
 return {
-    -- add blink.compat
+    -- add blink.compat for nvim.cmp sources compatibility
     {
 	'saghen/blink.compat',
 	-- use the latest release, via version = '*', if you also use the latest release for blink.cmp
@@ -52,6 +52,9 @@ return {
 		--   or use `completion.list.selection = "manual" | "auto_insert"`
 		--
 		['<C-space>'] = { 'show', 'show_documentation', 'hide_documentation' },
+		-- Replaced with ghost text accept from LLM (copilot.vim)
+		-- ['<C-y>'] = { 'select_and_accept' },
+		['<C-y>'] = { function() return false end, 'fallback' },
 		['<C-e>'] = { 'hide', 'fallback' },
 
 		['<Tab>'] = {
