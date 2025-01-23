@@ -8,6 +8,9 @@
 ; "!" is Alt (Left-Alt?)
 ; "+" is Shift Key
 
+; Create new binding with Win+Shift+L
+#+l::DllCall("LockWorkStation")
+
 Komorebic(cmd) {
     RunWait(format("komorebic.exe {}", cmd), , "Hide")
 }
@@ -39,6 +42,7 @@ Komorebic(cmd) {
 #+[::Komorebic("cycle-stack previous")
 #+]::Komorebic("cycle-stack next")
 
+
 ; Resize
 !=::Komorebic("resize-axis horizontal increase")
 !-::Komorebic("resize-axis horizontal decrease")
@@ -46,10 +50,12 @@ Komorebic(cmd) {
 !+_::Komorebic("resize-axis vertical decrease")
 
 ; Manipulate windows
-!t::Komorebic("toggle-float")
-!f::Komorebic("toggle-monocle")
+!t::Komorebic("toggle-monocle")
+!f::Komorebic("toggle-float")
 
 ; Window manager options
+!+m::Komorebic("manage") ; Force komorebi to manage the focused window
+!+u::Komorebic("unmanage") ; Unmanage a window that was forcibly managed
 !+r::Komorebic("retile")
 !p::Komorebic("toggle-pause")
 
