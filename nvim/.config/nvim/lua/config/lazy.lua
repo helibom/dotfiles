@@ -30,8 +30,12 @@ set.wrap = false
 -- set.foldexpr = "v:lua.vim.treesitter.foldexpr()"
 -- set.foldtext = "v:lua.vim.treesitter.foldtext()"
 
-
 vim.api.nvim_set_keymap('n', '\\u', '<Cmd>nohlsearch<CR>', { noremap = true, silent = true })
+
+vim.api.nvim_set_keymap('n', '<C-Up>', ':resize +2<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<C-Down>', ':resize -2<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<C-Right>', ':vertical resize -2<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<C-Left>', ':vertical resize +2<CR>', { noremap = true, silent = true })
 
 
 -- Setup lazy.nvim
