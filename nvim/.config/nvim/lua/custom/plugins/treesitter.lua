@@ -6,7 +6,7 @@ return {
 	},
 	config = function ()
 	    ---@diagnostic disable-next-line: missing-fields
-	    require'nvim-treesitter.configs'.setup {
+	    require'treesitter-context'.setup {
 		enable = false, -- Enable this plugin (Can be enabled/disabled later via commands)
 		multiwindow = false, -- Enable multiwindow support.
 		max_lines = 0, -- How many lines the window should span. Values <= 0 mean no limit.
@@ -33,6 +33,7 @@ return {
 	      -- A list of parser names, or "all" (the listed parsers MUST always be installed)
 	      ensure_installed = {
 	      	"c",
+		"c_sharp",
 		"cpp",
 		"clojure",
 		"bash",
