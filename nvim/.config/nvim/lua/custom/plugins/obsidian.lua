@@ -25,7 +25,7 @@ return {
 			path = "~/homeWindows/obsidian/main",
 			overrides = {
 			    templates = {
-				folder = "~/homeWindows/Documents/obsidian-vault/_Templates/"
+				folder = "~/homeWindows/obsidian/main/_Templates/"
 			    }
 			}
 		    },
