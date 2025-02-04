@@ -63,14 +63,25 @@ config.use_fancy_tab_bar = false
 config.tab_bar_at_bottom = true
 config.hide_tab_bar_if_only_one_tab = false
 
-config.leader = { 
-    key = 'Space', 
-    mods = 'CTRL', 
-    timeout_milliseconds = 1000 
+config.leader = {
+    key = 'Space',
+    mods = 'CTRL',
+    timeout_milliseconds = 1000
 }
 
 -- Key bindings for multiplexing
 config.keys = {
+    -- Open tab in new Window
+    {
+	key = '!',
+	mods = 'CTRL|SHIFT',
+	---@diagnostic disable-next-line: unused-local
+	action = wezterm.action_callback(function(_win, pane)
+	    ---@diagnostic disable-next-line: unused-local
+	    local tab, window = pane:move_to_new_window()
+	end),
+    },
+    -- New tab (from CWD)
     {
 	key = 'c',
 	mods = 'LEADER',
