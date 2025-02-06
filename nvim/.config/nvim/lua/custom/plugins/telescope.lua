@@ -41,14 +41,14 @@ return {
 	    vim.keymap.set('n', 'gD', builtin.lsp_definitions, { desc = 'Telescope definition of word under cursor, go to if only one' })
 	    -- Work related
 	    vim.keymap.set(
-	    	'n',
-	    	'<leader>fm',
-	    	function ()
-		    require('telescope.builtin').find_files {
-			cwd = "~/work/repos/inca"
-		    }
-		end,
-	    	{ desc = 'Telescope Monorepo' }
+	    'n',
+	    '<leader>fm',
+	    function ()
+		require('telescope.builtin').find_files {
+		    cwd = "~/work/repos/inca"
+		}
+	    end,
+	    { desc = 'Telescope Monorepo' }
 	    )
 	end
     }
