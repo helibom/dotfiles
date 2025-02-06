@@ -38,6 +38,7 @@ return {
 	    require("lspconfig").yamlls.setup { capabilities = capabilities }
 	    require("lspconfig").ts_ls.setup { capabilities = capabilities }
 	    require("lspconfig").cssls.setup { capabilities = capabilities }
+	    require("lspconfig").tailwindcss.setup { capabilities = capabilities }
 	    require("lspconfig").clojure_lsp.setup { capabilities = capabilities }
 	    require("lspconfig").csharp_ls.setup { capabilities = capabilities }
 	    require("lspconfig").bashls.setup { capabilities = capabilities }
