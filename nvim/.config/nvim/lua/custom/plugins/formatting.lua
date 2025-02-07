@@ -13,6 +13,7 @@ return {
 		    javascriptreact = { "prettier" },
 		    typescriptreact = { "prettier" },
 		    clojure = { "cljfmt" },
+		    htmldjango = { "djlint" },
 		}
 	    }
 	end
