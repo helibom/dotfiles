@@ -105,6 +105,20 @@ alias wt="watson tags"
 alias wp="watson projects"
 alias WATSON_HOME='WATSON_DIR=~/dev/watson/home/.config/watson'
 alias WATSON_WORK='WATSON_DIR=~/dev/watson/work/.config/watson'
+function wlgdate()
+{
+    local out=""
+    out+="$(WATSON_WORK watson log -G -f $1 -t $1)"
+    out+="$(WATSON_HOME watson log -G -f $1 -t $1)"
+    batcat -p <<< "$out"
+}
+function waggdate()
+{
+    local out=""
+    out+="$(WATSON_WORK watson aggregate -G -f $1 -t $1)"
+    out+="$(WATSON_HOME watson aggregate -G -f $1 -t $1)"
+    echo <<< "$out"
+}
 function wce()
 {
   watson start $1 $2 $3
