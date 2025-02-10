@@ -29,7 +29,16 @@ return {
 	    ---@diagnostic disable-next-line: missing-fields
 	    require("mason-lspconfig").setup({
 		ensure_installed = {
-		    "lua_ls"
+		    "lua_ls",
+		    "jsonls",
+		    "yamlls",
+		    "ts_ls",
+		    "cssls",
+		    "tailwindcss",
+		    "clojure_lsp",
+		    "csharp_ls",
+		    "bashls",
+		    "texlab",
 		}
 	    })
 	    -- ######### SERVERS ############# -- 
