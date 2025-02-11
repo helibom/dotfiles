@@ -52,4 +52,7 @@ export XDG_DATA_DIRS=$XDG_DATA_DIRS:$HOME/.local/share/flatpak/exports/share
 export XDG_DATA_DIRS=$XDG_DATA_DIRS:/var/lib/flatpak/exports/share
 . "/home/helibom/.deno/env"
 
-export PATH=$PATH:$HOME/.dotnet/tools
+# Append .NET paths
+export PATH=$PATH:$HOME/.dotnet/
+
+
