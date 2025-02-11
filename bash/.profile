@@ -55,4 +55,5 @@ export XDG_DATA_DIRS=$XDG_DATA_DIRS:/var/lib/flatpak/exports/share
 # Append .NET paths
 export PATH=$PATH:$HOME/.dotnet/
 
-
+# Append LuaRocks executable paths
+export PATH=$PATH:$HOME/.local/share/nvim/lazy-rocks/hererocks/bin/
