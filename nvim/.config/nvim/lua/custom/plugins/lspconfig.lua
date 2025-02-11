@@ -33,6 +33,7 @@ return {
 		    "jsonls",
 		    "yamlls",
 		    "ts_ls",
+		    "denols",
 		    "cssls",
 		    "tailwindcss",
 		    "clojure_lsp",
@@ -46,6 +47,7 @@ return {
 	    require("lspconfig").jsonls.setup { capabilities = capabilities }
 	    require("lspconfig").yamlls.setup { capabilities = capabilities }
 	    require("lspconfig").ts_ls.setup { capabilities = capabilities }
+	    require("lspconfig").denols.setup { capabilities = capabilities }
 	    require("lspconfig").cssls.setup { capabilities = capabilities }
 	    require("lspconfig").tailwindcss.setup { capabilities = capabilities }
 	    require("lspconfig").clojure_lsp.setup { capabilities = capabilities }
