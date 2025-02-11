@@ -20,7 +20,6 @@ return {
 	init = function ()
 	    local ng = require('neogit')
 	    vim.keymap.set('n', '<leader>gs', ng.open, { desc = 'Git status (Neogit)' })
-	    vim.keymap.set('n', '<leader>gs', ng.open, { desc = 'Git status (Neogit)' })
 	    -- Deep diffing
 	    vim.keymap.set('n', ',hh', '<cmd>DiffviewFileHistory<cr>', { desc = 'Diffview Deep Repo history' })
 	    vim.keymap.set('n', ',hf', '<cmd>DiffviewFileHistory --follow %<cr>', { desc = 'Diffview Deep File history' })
