@@ -43,6 +43,7 @@ return {
 	      	"javascript",
 		"scss",
 		"rust",
+		"http",
 		"regex",
 		"r",
 		"python",
