@@ -100,20 +100,19 @@ export FZF_DEFAULT_COMMAND='ag --hidden -g ""'
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-	git
-  fzf
-  jq
-	gitfast
-  tmux
-	vscode
-	copypath
-	yarn
-	zsh-autosuggestions
-	pnpm
-	rust
-  watson
-  docker 
-  docker-compose
+    git
+    fzf
+    jq
+    gitfast
+    tmux
+    vscode
+    copypath
+    yarn
+    zsh-autosuggestions
+    rust
+    watson
+    docker 
+    docker-compose
 )
 
 
