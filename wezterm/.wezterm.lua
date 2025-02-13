@@ -71,6 +71,12 @@ config.leader = {
 
 -- Key bindings for multiplexing
 config.keys = {
+    -- Disable default "Alt+Q" assignment
+    {
+	key = 'q',
+	mods = 'ALT',
+	action = wezterm.action.DisableDefaultAssignment,
+    },
     -- Open tab in new Window
     {
 	key = '!',
