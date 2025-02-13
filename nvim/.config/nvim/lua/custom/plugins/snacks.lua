@@ -78,7 +78,7 @@ return {
       },
     },
     indent = { enabled = true },
-    input = { enabled = true },
+    input = { enabled = false },
     notifier = {
 	enabled = true,
 	timeout = 3000,
