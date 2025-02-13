@@ -1,0 +1,4 @@
+# ~/.gitignore 
+# for global ignore patterns
+
+*.env

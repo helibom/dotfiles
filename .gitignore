@@ -8,3 +8,4 @@
 
 # zoxide db
 *.zo
+lazy-lock.json

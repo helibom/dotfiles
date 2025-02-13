@@ -2,6 +2,9 @@
 	email = helibom.contact@gmail.com
 	name = Henrik Lindblom
 
+[core]
+	excludesFile = ~/.gitignore
+
 [includeIf "gitdir:~/work/**/"]
   path = ~/work/.gitconfig
 
