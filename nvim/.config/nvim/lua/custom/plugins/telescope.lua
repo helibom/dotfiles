@@ -11,8 +11,12 @@ return {
 	},
 	config = function ()
 	    require('telescope').setup {
-		-- pickers = {}
-		extensions = {
+		pickers = {
+		    find_files = {
+			-- `hidden = true` will still show the inside of `.git/` as it's not `.gitignore`d.
+			find_command = { "rg", "--files", "--hidden", "--glob", "!**/.git/*" },
+		    },
+		},		extensions = {
 		    fzf = {}
 		}
 	    }
@@ -28,32 +32,15 @@ return {
 	    vim.keymap.set('n', '<leader>fh', builtin.help_tags, { desc = 'Telescope help tags' })
 	    vim.keymap.set('n', '<leader>fr', builtin.registers, { desc = 'Telescope register' })
 	    vim.keymap.set('n', '<leader>fk', builtin.keymaps, { desc = 'Telescope normal mode keymaps' })
+	    -- Git 
 	    vim.keymap.set('n', '<leader>fcc', builtin.git_commits, { desc = 'Telescope repository commits' })
 	    vim.keymap.set('n', '<leader>fcb', builtin.git_bcommits, { desc = 'Telescope buffer commits' })
 	    vim.keymap.set('n', '<leader>fgb', builtin.git_branches, { desc = 'Telescope git branches' })
-	    vim.keymap.set(
-	    	'n',
-	    	'<leader>ec',
-	    	function ()
-		    require('telescope.builtin').find_files {
-			cwd = vim.fn.stdpath("config")
-		    }
-	    	end,
-	    	{ desc = 'Telescope Neovim config directory' }
-	    )
+	    vim.keymap.set('n', '<leader>ec', function () require('telescope.builtin').find_files { cwd = vim.fn.stdpath("config") } end, { desc = 'Telescope Neovim config directory' })
 	    -- LSP stuff
 	    vim.keymap.set('n', 'gD', builtin.lsp_definitions, { desc = 'Telescope definition of word under cursor, go to if only one' })
-	    -- Work related
-	    vim.keymap.set(
-	    'n',
-	    '<leader>fm',
-	    function ()
-		require('telescope.builtin').find_files {
-		    cwd = "~/work/repos/inca"
-		}
-	    end,
-	    { desc = 'Telescope Monorepo' }
-	    )
+	    -- Dotfiles picker
+	    vim.keymap.set('n', '<leader>df', function () require('telescope.builtin').find_files { cwd = "~/dotfiles" } end, { desc = 'Telescope dotfiles directory' })
 	end
     }
 }

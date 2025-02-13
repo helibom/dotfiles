@@ -45,6 +45,7 @@ return {
 		"rust",
 		"http",
 		"regex",
+		"jq",
 		"r",
 		"python",
 		"perl",

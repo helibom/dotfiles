@@ -78,7 +78,7 @@ return {
       },
     },
     indent = { enabled = true },
-    input = { enabled = false },
+    input = { enabled = false }, -- NOTE: Disabled in the mean time while this causes `rest-nvim/rest-nvim` to crash
     notifier = {
 	enabled = true,
 	timeout = 3000,
