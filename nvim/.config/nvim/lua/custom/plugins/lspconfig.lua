@@ -42,19 +42,44 @@ return {
 		    "texlab",
 		}
 	    })
-	    -- ######### SERVERS ############# -- 
-	    require("lspconfig").lua_ls.setup { capabilities = capabilities }
-	    require("lspconfig").jsonls.setup { capabilities = capabilities }
-	    require("lspconfig").yamlls.setup { capabilities = capabilities }
-	    require("lspconfig").ts_ls.setup { capabilities = capabilities }
-	    require("lspconfig").denols.setup { capabilities = capabilities }
-	    require("lspconfig").cssls.setup { capabilities = capabilities }
-	    require("lspconfig").tailwindcss.setup { capabilities = capabilities }
-	    require("lspconfig").clojure_lsp.setup { capabilities = capabilities }
-	    require("lspconfig").csharp_ls.setup { capabilities = capabilities }
-	    require("lspconfig").bashls.setup { capabilities = capabilities }
-	    require("lspconfig").graphql.setup { capabilities = capabilities }
-	    require("lspconfig").texlab.setup { capabilities = capabilities }
+	    local lspconfig = require("lspconfig")
+
+	    -- ######### TYPESCRIPT SERVERS ############# --	    
+	    lspconfig.ts_ls.setup {
+		capabilities = capabilities,
+		root_dir = lspconfig.util.root_pattern("tsconfig.json", "jsconfig.json", "package.json"),
+		filetypes = { "javascript", "typescript", "javascriptreact", "typescriptreact" },
+		single_file_support = false,
+		on_attach = function(client, bufnr)
+		    -- Disable formatting from tsserver
+		    client.server_capabilities.document_formatting = false
+		end,
+		-- commands = {
+		--     OrganizeImports = {
+		-- 	organize_imports,
+		-- 	description = "Organize Imports",
+		--     },
+		-- },
+	    }
+	    lspconfig.denols.setup {
+		capabilities = capabilities,
+		root_dir = lspconfig.util.root_pattern("deno.json", "deno.jsonc"),
+		-- on_attach = function(client, bufnr)
+		    -- vim.cmd "LspStop ts_ls"
+		-- end,
+	    }
+
+	    -- ######### MISC SERVERS ############# -- 
+	    lspconfig.lua_ls.setup { capabilities = capabilities }
+	    lspconfig.jsonls.setup { capabilities = capabilities }
+	    lspconfig.yamlls.setup { capabilities = capabilities }
+	    lspconfig.cssls.setup { capabilities = capabilities }
+	    lspconfig.tailwindcss.setup { capabilities = capabilities }
+	    lspconfig.clojure_lsp.setup { capabilities = capabilities }
+	    lspconfig.csharp_ls.setup { capabilities = capabilities }
+	    lspconfig.bashls.setup { capabilities = capabilities }
+	    lspconfig.graphql.setup { capabilities = capabilities }
+	    lspconfig.texlab.setup { capabilities = capabilities }
 
 	    vim.keymap.set('n', 'grn', vim.lsp.buf.rename, { desc = "LSP Rename" })
 	    vim.keymap.set('n', 'gra', vim.lsp.buf.code_action, { desc = "LSP Code Action" })
@@ -64,10 +89,10 @@ return {
 	    vim.api.nvim_create_autocmd('LspAttach', {
 		callback = function(args)
 		    local client = vim.lsp.get_client_by_id(args.data.client_id)
-			--    if client != nil and client.supports_method('textDocument/documentation?') then
-			-- -- Create a keymap for vim.lsp.buf.
-			-- return
-			--    end
+		    --    if client != nil and client.supports_method('textDocument/documentation?') then
+		    -- -- Create a keymap for vim.lsp.buf.
+		    -- return
+		    --    end
 		    if client.supports_method('textDocument/rename') then
 			-- Create a keymap for vim.lsp.buf.rename()
 		    end
