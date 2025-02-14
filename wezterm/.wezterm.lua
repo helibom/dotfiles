@@ -1,5 +1,6 @@
 local wezterm = require('wezterm')
 local config = wezterm.config_builder()
+local tabline = wezterm.plugin.require("https://github.com/michaelbrusegard/tabline.wez")
 
 -- WSL2 configuration
 config.default_domain = 'WSL:Debian' -- Change Ubuntu to your distro name if different
@@ -20,48 +21,76 @@ config.window_padding = {
   bottom = 2,
 }
 
--- Status bar configuration (AI-generated)
-wezterm.on("update-status", function(window, pane)
-  -- Get the current working directory
-  local basename = function(s)
-    return string.gsub(s, "(.*[/\\])(.*)", "%2")
-  end
-  local cwd = basename(pane:get_current_working_directory())
-
-  -- Get current process
-  local process = basename(pane:get_foreground_process_name())
-
-  -- Get current time
-  local time = wezterm.strftime("%H:%M")
-
-  -- Create left and right status elements
-  local left_status = string.format(" %s  %s ", process, cwd)
-  local right_status = string.format(" %s ", time)
-
-  -- Calculate remaining space
-  local width = window:get_dimensions().pixel_width
-  local char_width = window:get_dimensions().cell_width
-  local spaces = math.floor(width/char_width - #left_status - #right_status - 2)
-  local spacer = string.rep(" ", spaces)
-
-  -- Set the status bar text
-  window:set_left_status(wezterm.format({
-      {Background={Color="#333333"}},
-      {Foreground={Color="#ffffff"}},
-      {Text=left_status},
-  }))
-  window:set_right_status(wezterm.format({
-      {Background={Color="#333333"}},
-      {Foreground={Color="#ffffff"}},
-      {Text=right_status},
-  }))
-end)
-
 -- Enable status bar
 config.enable_tab_bar = true
 config.use_fancy_tab_bar = false
 config.tab_bar_at_bottom = true
 config.hide_tab_bar_if_only_one_tab = false
+config.enable_scroll_bar = true
+
+tabline.setup({
+  options = {
+    icons_enabled = true,
+    theme = 'Catppuccin Mocha',
+    tabs_enabled = true,
+    theme_overrides = {
+    -- Default colors from Catppuccin Mocha
+      normal_mode = {
+        a = { fg = '#181825', bg = '#cba6f7' },
+        b = { fg = '#181825', bg = '#f5c2e7' },
+        c = { fg = '#cdd6f4', bg = '#181825' },
+      },
+      copy_mode = {
+        a = { fg = '#181825', bg = '#f9e2af' },
+        b = { fg = '#f9e2af', bg = '#313244' },
+        c = { fg = '#cdd6f4', bg = '#181825' },
+      },
+      search_mode = {
+        a = { fg = '#181825', bg = '#a6e3a1' },
+        b = { fg = '#a6e3a1', bg = '#313244' },
+        c = { fg = '#cdd6f4', bg = '#181825' },
+      },
+      -- Defining colors for a new key table
+      window_mode = {
+        a = { fg = '#181825', bg = '#cba6f7' },
+        b = { fg = '#cba6f7', bg = '#313244' },
+        c = { fg = '#cdd6f4', bg = '#181825' },
+      },
+      -- Default tab colors
+      tab = {
+        active = { fg = '#c6a0f6', bg = '#313244' },
+        inactive = { fg = '#c6a0f6', bg = '#181825' },
+        inactive_hover = { fg = '#f5c2e7', bg = '#313244' },
+      }
+  },
+  section_separators = {
+      left = wezterm.nerdfonts.ple_right_half_circle_thick,
+      right = wezterm.nerdfonts.ple_left_half_circle_thick,
+  },
+  component_separators = {
+      left = wezterm.nerdfonts.ple_right_half_circle_thin,
+      right = wezterm.nerdfonts.ple_left_half_circle_thin,
+  },
+  tab_separators = {
+      left = wezterm.nerdfonts.ple_right_half_circle_thick,
+      right = wezterm.nerdfonts.ple_left_half_circle_thick,
+  },  },
+  sections = {
+      tabline_a = { 'mode' },
+      tabline_b = { 'workspace' },
+      tabline_c = { ' ' },
+      tab_active = {
+	  'index',
+	  { 'cwd', padding = { left = 0, right = 1 } },
+	  { 'zoomed', padding = 0 },
+      },
+      tab_inactive = { 'index', { 'cwd', padding = { left = 0, right = 1 } } },
+      tabline_x = { 'ram', 'cpu' },
+      tabline_y = { 'datetime', 'battery' },
+      tabline_z = { 'domain' },
+  },
+  extensions = {},
+})
 
 config.leader = {
     key = 'Space',
