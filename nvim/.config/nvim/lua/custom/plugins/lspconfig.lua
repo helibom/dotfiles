@@ -69,6 +69,16 @@ return {
 		-- end,
 	    }
 
+	    -- ######### GRAPHQL ############# --	    
+	    lspconfig.graphql.setup({
+	      capabilities = capabilities,
+	      -- absolute path to compiled cli
+	      cmd = { "~/.local/share/nvim/mason/bin/graphql-lsp", "server", "-m", "stream" }, -- [-s | --schema] {schemaPath}
+	      -- I do not need it in other filetypes, adjust for your needs
+	      filetypes = { 'graphql' },
+	      root_dir = lspconfig.util.root_pattern('.git', '.graphqlrc*', '.graphql.config.*', 'graphql.config.*')
+	    })
+
 	    -- ######### MISC SERVERS ############# -- 
 	    lspconfig.lua_ls.setup { capabilities = capabilities }
 	    lspconfig.jsonls.setup { capabilities = capabilities }
