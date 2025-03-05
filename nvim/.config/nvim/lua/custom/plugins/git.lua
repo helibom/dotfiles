@@ -27,6 +27,8 @@ return {
 	    vim.keymap.set('n', ',hl', '<Cmd>.DiffviewFileHistory --follow<CR>', { desc = 'Diffview Deep Line history' })
 	    -- Shallow diffing (against HEAD and staging area)
 	    vim.keymap.set('n', ',d', '<cmd>DiffviewOpen<cr>', { desc = 'Diffview Shallow Repo diff' })
+	    -- Close Diffview
+	    vim.keymap.set('n', ',dc', '<cmd>DiffviewClose<cr>', { desc = 'Diffview Close' })
 
 	end,
 	config = true
