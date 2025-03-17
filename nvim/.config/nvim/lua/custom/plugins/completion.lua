@@ -86,6 +86,10 @@ return {
 		nerd_font_variant = 'mono'
 	    },
 
+	    cmdline = {
+		enabled = true,
+	    },
+
 	    -- default list of enabled providers defined so that you can extend it
 	    -- elsewhere in your config, without redefining it, due to `opts_extend`
 	    sources = {
@@ -96,15 +100,21 @@ return {
 		    npm = {
 			name = "npm",
 			module = 'blink.compat.source',
-		    }
-		}
+		    },
+		    cmdline = {
+			-- recipe to ignores cmdline completions when executing shell commands
+			enabled = function()
+			    return vim.fn.getcmdtype() ~= ':' or not vim.fn.getcmdline():match("^[%%0-9,'<>%-]*!")
+			end
+		    },
+		},
 	    },
-
-	    -- experimental signature help support
-	    signature = { enabled = true }
 	},
-	-- allows extending the providers array elsewhere in your config
-	-- without having to redefine it
-	opts_extend = { "sources.default" }
+
+	-- experimental signature help support
+	signature = { enabled = true }
     },
+    -- allows extending the providers array elsewhere in your config
+    -- without having to redefine it
+    opts_extend = { "sources.default" }
 }
