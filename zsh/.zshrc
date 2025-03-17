@@ -147,7 +147,7 @@ source $HOME/.zsh_aliases
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # Source .profile
-source /home/helibom/.profile
+source $HOME/.zshenv
 
 # add to # ~/.zshrc
 export FZF_DEFAULT_COMMAND='ag --hidden -g ""'
