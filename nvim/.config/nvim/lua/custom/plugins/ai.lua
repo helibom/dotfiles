@@ -52,7 +52,7 @@ return {
 		    require("avante").setup {
 			---@diagnostic disable-next-line: duplicate-doc-alias
 			--- @alias Provider "claude" | "openai" | "azure" | "gemini" | "cohere" | "copilot" | string
-			provider = "claude", -- Recommend using Claude
+			provider = "copilot", -- Recommend using Claude
 			claude = {
 			    endpoint = "https://api.anthropic.com",
 			    model = "claude-3-5-sonnet-20241022",
