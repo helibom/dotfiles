@@ -12,53 +12,54 @@ return {
 			vim.g.copilot_no_tab_map = true
 			-- disable inline suggestions. we're only interested in chat funciton
 			--    vim.api.nvim_create_autocmd("VimEnter", {
-			-- 	command = "Copilot disable",
-			--  })
-		    end
-		}, -- or zbirenbaum/copilot.lua
-		{ "nvim-lua/plenary.nvim", branch = "master" }, -- for curl, log and async functions
-	    },
-	    build = "make tiktoken", -- Only on MacOS or Linux
-	    opts = {
-		-- See Configuration section for options
-	    },
-	    -- See Commands section for default commands if you want to lazy load on them
-	},
-	{
-	    "yetone/avante.nvim",
-	    event = "VeryLazy",
-	    lazy = false,
-	    version = false, -- Set this to "*" to always pull the latest release version, or set it to false to update to the latest code changes.
-	    opts = {
-		-- add any opts here
-	    },
-	    -- if you want to build from source then do `make BUILD_FROM_SOURCE=true`
-	    build = "make",
-	    dependencies = {
-		"stevearc/dressing.nvim",
-		"nvim-lua/plenary.nvim",
-		"MunifTanjim/nui.nvim",
-		"zbirenbaum/copilot.lua", -- for providers='copilot'
-		{
-		    -- Make sure to set this up properly if you have lazy=true
-		    'MeanderingProgrammer/render-markdown.nvim',
-		    opts = {
-			file_types = { "Avante" },
-		    },
-		    ft = { "Avante" },
+			    -- 	command = "Copilot disable",
+			    --  })
+			end
+		    }, -- or zbirenbaum/copilot.lua
+		    { "nvim-lua/plenary.nvim", branch = "master" }, -- for curl, log and async functions
 		},
+		build = "make tiktoken", -- Only on MacOS or Linux
+		opts = {
+		    -- See Configuration section for options
+		},
+		-- See Commands section for default commands if you want to lazy load on them
 	    },
-	    config = function ()
-		require("avante").setup {
-		    ---@alias Provider "claude" | "openai" | "azure" | "gemini" | "cohere" | "copilot" | string
-		    provider = "copilot", -- Recommend using Claude
-		    -- claude = {
-			--     endpoint = "https://api.anthropic.com",
-			--     model = "claude-3-5-sonnet-20241022",
-			--     temperature = 0,
-			--     max_tokens = 4096,
-			-- },
-			--
+	    {
+		"yetone/avante.nvim",
+		event = "VeryLazy",
+		lazy = false,
+		version = false, -- Set this to "*" to always pull the latest release version, or set it to false to update to the latest code changes.
+		opts = {
+		    -- add any opts here
+		},
+		-- if you want to build from source then do `make BUILD_FROM_SOURCE=true`
+		build = "make",
+		dependencies = {
+		    "stevearc/dressing.nvim",
+		    "nvim-lua/plenary.nvim",
+		    "MunifTanjim/nui.nvim",
+		    "zbirenbaum/copilot.lua", -- for providers='copilot'
+		    {
+			-- Make sure to set this up properly if you have lazy=true
+			'MeanderingProgrammer/render-markdown.nvim',
+			opts = {
+			    file_types = { "Avante" },
+			},
+			ft = { "Avante" },
+		    },
+		},
+		config = function ()
+		    require("avante").setup {
+			---@diagnostic disable-next-line: duplicate-doc-alias
+			--- @alias Provider "claude" | "openai" | "azure" | "gemini" | "cohere" | "copilot" | string
+			provider = "claude", -- Recommend using Claude
+			claude = {
+			    endpoint = "https://api.anthropic.com",
+			    model = "claude-3-5-sonnet-20241022",
+			    temperature = 0,
+			    max_tokens = 4096,
+			},
+
 			---Specify the special dual_boost mode
 			---1. enabled: Whether to enable dual_boost mode. Default to false.
 			---2. first_provider: The first provider to generate response. Default to "openai".
@@ -76,12 +77,15 @@ return {
 			    timeout = 60000, -- Timeout in milliseconds
 			},
 			behaviour = {
-			    auto_suggestions = false, -- Experimental stage, currently not working as expected
+			    auto_suggestions = false, -- Experimental stage
 			    auto_set_highlight_group = true,
 			    auto_set_keymaps = true,
-			    auto_apply_diff_after_generation = false,
+			    auto_apply_diff_after_generation = true, -- NOTE:
 			    support_paste_from_clipboard = false,
-			    minimize_diff = true, -- Whether to remove unchanged lines when applying a code block
+			    minimize_diff = false, -- Whether to remove unchanged lines when applying a code block
+			    enable_token_counting = false, -- Whether to enable token counting. Default to true.
+			    enable_cursor_planning_mode = false, -- Whether to enable Cursor Planning Mode. Default to false.
+			    enable_claude_text_editor_tool_mode = false, -- Whether to enable Claude Text Editor Tool Mode.
 			},
 			mappings = {
 			    --- @class AvanteConflictMappings
@@ -111,8 +115,14 @@ return {
 			    sidebar = {
 				apply_all = "A",
 				apply_cursor = "a",
+				retry_user_request = "r",
+				edit_user_request = "e",
 				switch_windows = "<Tab>",
 				reverse_switch_windows = "<S-Tab>",
+				remove_file = "d",
+				add_file = "@",
+				close = { "<Esc>", "q" },
+				close_from_input = nil, -- e.g., { normal = "<Esc>", insert = "<C-d>" }
 			    },
 			},
 			hints = { enabled = true },
