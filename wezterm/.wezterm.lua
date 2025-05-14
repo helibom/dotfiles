@@ -128,6 +128,17 @@ config.keys = {
 	mods = 'LEADER',
 	action = wezterm.action.CloseCurrentTab { confirm = true },
     },
+    -- Page Up
+    {
+	key = 'PageUp',
+	mods = 'CTRL|ALT',
+	action = wezterm.action.ScrollByPage(-0.5),
+    },
+    {
+	key = 'PageDown',
+	mods = 'CTRL|ALT',
+	action = wezterm.action.ScrollByPage(0.5),
+    },
     -- Split panes horizontally using Ctrl-Alt-Left/Right
     {
 	key = 'LeftArrow',
