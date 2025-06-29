@@ -1,4 +1,4 @@
-return {
+    return {
     -- add blink.compat for nvim.cmp sources compatibility
     {
 	'saghen/blink.compat',
@@ -24,7 +24,7 @@ return {
 	    },
 	},
 	-- use a release tag to download pre-built binaries
-	--version = 'v0.*',
+	version = 'v1.*',
 	-- AND/OR build from source, requires nightly: https://rust-lang.github.io/rustup/concepts/channels.html#working-with-nightly-rust
 	-- [[
 	-- OBS!
@@ -93,6 +93,20 @@ return {
 			auto_show = true,
 		    },
 		},
+		keymap = {
+		    ['<Tab>'] = {
+			function(cmp)
+			    if cmp.snippet_active() then return cmp.accept()
+			    else return cmp.select_and_accept() end
+			end,
+			'snippet_forward',
+			'fallback'
+		    },
+		    ['<C-p>'] = { 'select_prev', 'fallback' },
+		    ['<C-n>'] = { 'select_next', 'fallback' },
+		    ['<Up>'] = { 'select_prev', 'fallback' },
+		    ['<Down>'] = { 'select_next', 'fallback' },
+		}
 	    },
 
 	    -- default list of enabled providers defined so that you can extend it

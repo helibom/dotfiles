@@ -7,6 +7,9 @@ function mkcd() {
   mkdir -p "$1" && cd "$1"
 }
 
+# zoxide aliases
+alias zi='z $"(zoxide query -i)"'
+
 # xclip aliases
 alias toclip="xclip -selection clipboard"
 

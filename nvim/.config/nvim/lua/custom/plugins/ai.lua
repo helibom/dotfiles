@@ -19,6 +19,7 @@ return {
 		    { "nvim-lua/plenary.nvim", branch = "master" }, -- for curl, log and async functions
 		},
 		build = "make tiktoken", -- Only on MacOS or Linux
+		enabled = true,
 		opts = {
 		    -- See Configuration section for options
 		},
@@ -85,7 +86,7 @@ return {
 			    minimize_diff = false, -- Whether to remove unchanged lines when applying a code block
 			    enable_token_counting = false, -- Whether to enable token counting. Default to true.
 			    enable_cursor_planning_mode = false, -- Whether to enable Cursor Planning Mode. Default to false.
-			    enable_claude_text_editor_tool_mode = false, -- Whether to enable Claude Text Editor Tool Mode.
+			    enable_claude_text_editor_tool_mode = true, -- Whether to enable Claude Text Editor Tool Mode.
 			},
 			mappings = {
 			    --- @class AvanteConflictMappings
