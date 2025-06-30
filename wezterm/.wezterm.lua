@@ -3,7 +3,7 @@ local config = wezterm.config_builder()
 local tabline = wezterm.plugin.require("https://github.com/michaelbrusegard/tabline.wez")
 
 -- WSL2 configuration
-config.default_domain = 'WSL:Debian' -- Change Ubuntu to your distro name if different
+config.default_domain = 'local' -- Change Ubuntu to your distro name if different
 
 -- Color scheme
 config.color_scheme = 'Catppuccin Mocha'

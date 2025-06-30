@@ -25,6 +25,12 @@ fi
 if [ -d "$HOME/.local/bin" ] ; then
     PATH="$HOME/.local/bin:$PATH"
 fi
+
+# set PATH so it includes user's "app" directory if it exists
+if [ -d "$HOME/.apps" ] ; then
+    PATH="$HOME/.apps:$PATH"
+fi
+
 . "$HOME/.cargo/env"
 
 export PATH=$PATH:/home/helibom/.local/bin
