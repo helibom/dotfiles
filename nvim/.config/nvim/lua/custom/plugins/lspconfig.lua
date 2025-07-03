@@ -28,6 +28,7 @@ return {
 			require("mason").setup()
 			require("mason-lspconfig").setup({
 				ensure_installed = {
+					"nil_ls",
 					"lua_ls",
 					"jsonls",
 					"yamlls",
@@ -37,7 +38,7 @@ return {
 					"tailwindcss",
 					"pylsp",
 					"clojure_lsp",
-					"csharp_ls",
+					-- "csharp_ls",
 					"bashls",
 					"texlab",
 				}
@@ -78,6 +79,19 @@ return {
 				filetypes = { 'graphql' },
 				root_dir = lspconfig.util.root_pattern('.git', '.graphqlrc*', '.graphql.config.*', 'graphql.config.*')
 			})
+
+			-- ######### NIX SERVERS ############# --
+			lspconfig.nil_ls.setup {
+				capabilities = capabilities,
+				root_dir = lspconfig.util.root_pattern("flake.nix", "nixpkgs.json", "nix-config.json"),
+				settings = {
+					nil_ls = {
+						formatting = {
+							command = "nixfmt",
+						},
+					},
+				},
+			}
 
 			-- ######### MISC SERVERS ############# --
 			lspconfig.jdtls.setup { capabilities = capabilities }
