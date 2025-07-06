@@ -41,6 +41,7 @@ return {
 					-- "csharp_ls",
 					"bashls",
 					"texlab",
+					"marksman",
 				}
 			})
 			local lspconfig = require("lspconfig")
@@ -97,6 +98,7 @@ return {
 			lspconfig.fennel_ls.setup { capabilities = capabilities }
 
 			-- ######### MISC SERVERS ############# --
+			lspconfig.marksman.setup { capabilities = capabilities, filetypes = { "markdown" } }
 			lspconfig.jdtls.setup { capabilities = capabilities }
 			lspconfig.lua_ls.setup { capabilities = capabilities }
 			lspconfig.jsonls.setup { capabilities = capabilities }
