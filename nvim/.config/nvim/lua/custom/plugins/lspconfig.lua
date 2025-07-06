@@ -93,6 +93,9 @@ return {
 				},
 			}
 
+			-- ######### LISP SERVERS ############# --
+			lspconfig.fennel_ls.setup { capabilities = capabilities }
+
 			-- ######### MISC SERVERS ############# --
 			lspconfig.jdtls.setup { capabilities = capabilities }
 			lspconfig.lua_ls.setup { capabilities = capabilities }

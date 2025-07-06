@@ -36,6 +36,7 @@ return {
 					"c_sharp",
 					"cpp",
 					"clojure",
+					"fennel",
 					"bash",
 					"lua",
 					"typescript",
