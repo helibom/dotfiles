@@ -113,6 +113,7 @@ plugins=(
     watson
     docker 
     docker-compose
+		podman
 )
 
 
