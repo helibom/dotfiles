@@ -193,20 +193,4 @@ zinit light-mode for \
 # Oh-My-Zsh pnpm plugin autosuggest script?
 zinit light ntnyq/omz-plugin-pnpm > /dev/null
 
-# pnpm
-export PNPM_HOME="/home/helibom/.local/share/pnpm"
-case ":$PATH:" in
-  *":$PNPM_HOME:"*) ;;
-  *) export PATH="$PNPM_HOME:$PATH" ;;
-esac
-
-# pnpm end
 source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
-# bun completions
-[ -s "/home/helibom/.bun/_bun" ] && source "/home/helibom/.bun/_bun"
-
-# bun
-export BUN_INSTALL="$HOME/.bun"
-export PATH="$BUN_INSTALL/bin:$PATH"
-. "/home/helibom/.deno/env"

@@ -46,6 +46,22 @@ export ZSH_TMUX_CONFIG=/home/helibom/.config/tmux/tmux.conf
 # Export dev script dir to PATH
 export PATH=$PATH:/home/helibom/dev/scripts
 
+# pnpm
+export PNPM_HOME="/home/helibom/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
+
+# bun
+[ -s "/home/helibom/.bun/_bun" ] && source "/home/helibom/.bun/_bun"
+
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+. "/home/helibom/.deno/env"
+# bun end
+
 # Windows Sublime Text Path
 export PATH=$PATH:"/mnt/c/Program Files/Sublime Text/subl.exe"
 
