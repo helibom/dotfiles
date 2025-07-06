@@ -1,5 +1,7 @@
 source $HOME/.profile
 
+export MANPAGER='nvim +Man!'
+
 . "$HOME/.cargo/env"
 export NODE_OPTIONS=--use-openssl-ca
 
