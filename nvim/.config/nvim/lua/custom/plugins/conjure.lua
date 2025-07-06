@@ -19,5 +19,5 @@ return {
 		-- 'sigmaSd/conjure-deno',
 		-- dev = true,
 		-- dir = "~/dev/forks/conjure-deno"
-	}
+	},
 }

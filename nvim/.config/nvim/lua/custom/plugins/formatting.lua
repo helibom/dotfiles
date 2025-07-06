@@ -1,10 +1,10 @@
 return {
 	{
-		'stevearc/conform.nvim',
+		"stevearc/conform.nvim",
 		opts = {},
 		config = function()
 			local conform = require("conform")
-			conform.setup {
+			conform.setup({
 				formatters_by_ft = {
 					json = { "jq" },
 					yaml = { "yamlfmt" },
@@ -16,8 +16,8 @@ return {
 					clojure = { "cljfmt", "zprint" },
 					htmldjango = { "djlint" },
 					nix = { "nixfmt" },
-				}
-			}
+				},
+			})
 			vim.keymap.set("n", "=C", function()
 				conform.format({ async = true, lsp_format = "fallback" }, function(err, did_edit)
 					if err then
@@ -27,7 +27,7 @@ return {
 					end
 				end)
 			end, { desc = "Format with conform.nvim" })
-		end
+		end,
 	},
 	{
 		"https://git.sr.ht/~ioiojo/standard-clojure-style.nvim",
@@ -37,8 +37,8 @@ return {
 				vim.keymap.set("n", "=J", function()
 					standard_clojure_style["format-buffer"]()
 					vim.cmd('echo "StandardClojureStyleFormat()"')
-				end)
+				end),
 			})
-		end
-	}
+		end,
+	},
 }

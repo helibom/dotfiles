@@ -5,20 +5,20 @@ return {
 			{
 				"github/copilot.vim",
 				config = function()
-					vim.keymap.set('i', '<C-y>', 'copilot#Accept("")', {
+					vim.keymap.set("i", "<C-y>", 'copilot#Accept("")', {
 						expr = true,
-						replace_keycodes = false
+						replace_keycodes = false,
 					})
 					vim.g.copilot_no_tab_map = true
 					-- disable inline suggestions. we're only interested in chat funciton
 					--    vim.api.nvim_create_autocmd("VimEnter", {
 					-- 	command = "Copilot disable",
 					--  })
-				end
-			},                                           -- or zbirenbaum/copilot.lua
+				end,
+			}, -- or zbirenbaum/copilot.lua
 			{ "nvim-lua/plenary.nvim", branch = "master" }, -- for curl, log and async functions
 		},
-		build = "make tiktoken",                       -- Only on MacOS or Linux
+		build = "make tiktoken", -- Only on MacOS or Linux
 		enabled = true,
 		opts = {
 			-- See Configuration section for options
@@ -40,7 +40,7 @@ return {
 			"nvim-lua/plenary.nvim",
 			"MunifTanjim/nui.nvim",
 			{
-				'zbirenbaum/copilot.lua', -- for providers='copilot'
+				"zbirenbaum/copilot.lua", -- for providers='copilot'
 				cmd = "Copilot",
 				event = "InsertEnter",
 				config = function()
@@ -49,7 +49,7 @@ return {
 			},
 			{
 				-- Make sure to set this up properly if you have lazy=true
-				'MeanderingProgrammer/render-markdown.nvim',
+				"MeanderingProgrammer/render-markdown.nvim",
 				opts = {
 					file_types = { "Avante" },
 				},
@@ -57,12 +57,12 @@ return {
 			},
 		},
 		config = function()
-			require("avante").setup {
+			require("avante").setup({
 				---@diagnostic disable-next-line: duplicate-doc-alias
 				--- @alias Provider "claude" | "openai" | "azure" | "gemini" | "cohere" | "copilot" | string
 				provider = "copilot", -- Recommend using Claude
 				event = "VeryLazy",
-				version = false,  -- Never set this value to "*"! Never!
+				version = false, -- Never set this value to "*"! Never!
 
 				providers = {
 					claude = {
@@ -71,7 +71,7 @@ return {
 						extra_request_body = {
 							temperature = 0,
 							max_tokens = 4096,
-						}
+						},
 					},
 				},
 				---Specify the special dual_boost mode
@@ -96,9 +96,9 @@ return {
 					auto_set_keymaps = true,
 					auto_apply_diff_after_generation = true, -- NOTE:
 					support_paste_from_clipboard = false,
-					minimize_diff = false,                 -- Whether to remove unchanged lines when applying a code block
-					enable_token_counting = false,         -- Whether to enable token counting. Default to true.
-					enable_cursor_planning_mode = false,   -- Whether to enable Cursor Planning Mode. Default to false.
+					minimize_diff = false, -- Whether to remove unchanged lines when applying a code block
+					enable_token_counting = false, -- Whether to enable token counting. Default to true.
+					enable_cursor_planning_mode = false, -- Whether to enable Cursor Planning Mode. Default to false.
 					enable_claude_text_editor_tool_mode = true, -- Whether to enable Claude Text Editor Tool Mode.
 				},
 				mappings = {
@@ -143,8 +143,8 @@ return {
 				windows = {
 					---@type "right" | "left" | "top" | "bottom"
 					position = "right", -- the position of the sidebar
-					wrap = true,   -- similar to vim.o.wrap
-					width = 30,    -- default % based on available width
+					wrap = true, -- similar to vim.o.wrap
+					width = 30, -- default % based on available width
 					sidebar_header = {
 						enabled = true, -- true, false to enable/disable the header
 						align = "center", -- left, center, right for title
@@ -183,7 +183,7 @@ return {
 					--- Disable by setting to -1.
 					override_timeoutlen = 500,
 				},
-			}
-		end
-	}
+			})
+		end,
+	},
 }

@@ -23,7 +23,7 @@ return {
 			},
 		},
 		config = function()
-			local capabilities = require('blink.cmp').get_lsp_capabilities() -- autocompletion
+			local capabilities = require("blink.cmp").get_lsp_capabilities() -- autocompletion
 
 			require("mason").setup()
 			require("mason-lspconfig").setup({
@@ -42,12 +42,12 @@ return {
 					"bashls",
 					"texlab",
 					"marksman",
-				}
+				},
 			})
 			local lspconfig = require("lspconfig")
 
-			-- ######### TYPESCRIPT SERVERS ############# --	
-			lspconfig.ts_ls.setup {
+			-- ######### TYPESCRIPT SERVERS ############# --
+			lspconfig.ts_ls.setup({
 				capabilities = capabilities,
 				root_dir = lspconfig.util.root_pattern("tsconfig.json", "jsconfig.json", "package.json"),
 				filetypes = { "javascript", "typescript", "javascriptreact", "typescriptreact" },
@@ -62,27 +62,27 @@ return {
 				-- 	description = "Organize Imports",
 				--     },
 				-- },
-			}
-			lspconfig.denols.setup {
+			})
+			lspconfig.denols.setup({
 				capabilities = capabilities,
 				root_dir = lspconfig.util.root_pattern("deno.json", "deno.jsonc"),
 				-- on_attach = function(client, bufnr)
 				-- vim.cmd "LspStop ts_ls"
 				-- end,
-			}
+			})
 
-			-- ######### GRAPHQL ############# --	
+			-- ######### GRAPHQL ############# --
 			lspconfig.graphql.setup({
 				capabilities = capabilities,
 				-- absolute path to compiled cli
 				cmd = { "~/.local/share/nvim/mason/bin/graphql-lsp", "server", "-m", "stream" }, -- [-s | --schema] {schemaPath}
 				-- I do not need it in other filetypes, adjust for your needs
-				filetypes = { 'graphql' },
-				root_dir = lspconfig.util.root_pattern('.git', '.graphqlrc*', '.graphql.config.*', 'graphql.config.*')
+				filetypes = { "graphql" },
+				root_dir = lspconfig.util.root_pattern(".git", ".graphqlrc*", ".graphql.config.*", "graphql.config.*"),
 			})
 
 			-- ######### NIX SERVERS ############# --
-			lspconfig.nil_ls.setup {
+			lspconfig.nil_ls.setup({
 				capabilities = capabilities,
 				root_dir = lspconfig.util.root_pattern("flake.nix", "nixpkgs.json", "nix-config.json"),
 				settings = {
@@ -92,44 +92,44 @@ return {
 						},
 					},
 				},
-			}
+			})
 
 			-- ######### LISP SERVERS ############# --
-			lspconfig.fennel_ls.setup { capabilities = capabilities }
+			lspconfig.fennel_ls.setup({ capabilities = capabilities })
 
 			-- ######### MISC SERVERS ############# --
-			lspconfig.marksman.setup { capabilities = capabilities, filetypes = { "markdown" } }
-			lspconfig.jdtls.setup { capabilities = capabilities }
-			lspconfig.lua_ls.setup { capabilities = capabilities }
-			lspconfig.jsonls.setup { capabilities = capabilities }
-			lspconfig.pylsp.setup { capabilities = capabilities }
-			lspconfig.yamlls.setup { capabilities = capabilities }
-			lspconfig.cssls.setup { capabilities = capabilities }
-			lspconfig.tailwindcss.setup { capabilities = capabilities }
-			lspconfig.clojure_lsp.setup { capabilities = capabilities }
-			lspconfig.csharp_ls.setup { capabilities = capabilities }
-			lspconfig.bashls.setup { capabilities = capabilities }
-			lspconfig.graphql.setup { capabilities = capabilities }
-			lspconfig.prismals.setup { capabilities = capabilities }
-			lspconfig.texlab.setup { capabilities = capabilities }
+			lspconfig.marksman.setup({ capabilities = capabilities, filetypes = { "markdown" } })
+			lspconfig.jdtls.setup({ capabilities = capabilities })
+			lspconfig.lua_ls.setup({ capabilities = capabilities })
+			lspconfig.jsonls.setup({ capabilities = capabilities })
+			lspconfig.pylsp.setup({ capabilities = capabilities })
+			lspconfig.yamlls.setup({ capabilities = capabilities })
+			lspconfig.cssls.setup({ capabilities = capabilities })
+			lspconfig.tailwindcss.setup({ capabilities = capabilities })
+			lspconfig.clojure_lsp.setup({ capabilities = capabilities })
+			lspconfig.csharp_ls.setup({ capabilities = capabilities })
+			lspconfig.bashls.setup({ capabilities = capabilities })
+			lspconfig.graphql.setup({ capabilities = capabilities })
+			lspconfig.prismals.setup({ capabilities = capabilities })
+			lspconfig.texlab.setup({ capabilities = capabilities })
 
-			vim.keymap.set('n', 'grn', vim.lsp.buf.rename, { desc = "LSP Rename" })
-			vim.keymap.set('n', 'gra', vim.lsp.buf.code_action, { desc = "LSP Code Action" })
-			vim.keymap.set('n', 'grr', vim.lsp.buf.references, { desc = "LSP References" })
-			vim.keymap.set('i', '<C-Space>', vim.lsp.buf.signature_help, { desc = "LSP Signature Help" })
+			vim.keymap.set("n", "grn", vim.lsp.buf.rename, { desc = "LSP Rename" })
+			vim.keymap.set("n", "gra", vim.lsp.buf.code_action, { desc = "LSP Code Action" })
+			vim.keymap.set("n", "grr", vim.lsp.buf.references, { desc = "LSP References" })
+			vim.keymap.set("i", "<C-Space>", vim.lsp.buf.signature_help, { desc = "LSP Signature Help" })
 
-			vim.api.nvim_create_autocmd('LspAttach', {
+			vim.api.nvim_create_autocmd("LspAttach", {
 				callback = function(args)
 					local client = vim.lsp.get_client_by_id(args.data.client_id)
 					-- if client and client.supports_method('textDocument/documentation') then
 					-- Create a keymap for vim.lsp.buf.
 					-- end
-					if client and client.supports_method('textDocument/implementation') then
+					if client and client.supports_method("textDocument/implementation") then
 						-- Create a keymap for vim.lsp.buf.implementation
-						vim.keymap.set('n', 'cd', vim.lsp.buf.implementation, { desc = "LSP Implementation" })
+						vim.keymap.set("n", "cd", vim.lsp.buf.implementation, { desc = "LSP Implementation" })
 					end
 				end,
 			})
 		end,
-	}
+	},
 }
