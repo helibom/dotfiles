@@ -194,3 +194,7 @@ zinit light-mode for \
 zinit light ntnyq/omz-plugin-pnpm > /dev/null
 
 source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# direnv
+eval "$(direnv hook zsh)"
+# direnv end
