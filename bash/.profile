@@ -79,3 +79,8 @@ export PATH=$PATH:$HOME/.dotnet/
 
 # Append LuaRocks executable paths
 export PATH=$PATH:$HOME/.local/share/nvim/lazy-rocks/hererocks/bin/
+
+
+# direnv
+# export DIRENV_LOG_FORMAT=$'\033[2mdirenv: %s\033[0m'
+export DIRENV_LOG_FORMAT='' # silence
