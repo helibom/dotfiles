@@ -25,6 +25,9 @@
 [alias]
         dft = difftool
 
+[init]
+	defaultBranch = master
+
 [pull]
   rebase = false
 
@@ -38,14 +41,6 @@
 [mergetool "nvim"]
 	cmd = "nvim -d -c \"wincmd l\" -c \"norm ]c\" \"$LOCAL\" \"$MERGED\" \"$REMOTE\""
 
-# "Force ssh connection"?
-# [url "git@github.com:"]
-# insteadOf = https://github.com/
-[credential "https://github.com"]
-	helper = 
-	helper = !/usr/bin/gh auth git-credential
-[credential "https://gist.github.com"]
-	helper = 
-	helper = !/usr/bin/gh auth git-credential
-[init]
-	defaultBranch = master
+; "Force ssh connection"?
+[url "git@github.com:"]
+insteadOf = https://github.com/
