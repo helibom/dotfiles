@@ -36,7 +36,7 @@ return {
 					"denols",
 					"cssls",
 					"tailwindcss",
-					"pylsp",
+					-- "pylsp",
 					"clojure_lsp",
 					-- "csharp_ls",
 					"bashls",
