@@ -10,8 +10,11 @@ config.color_scheme = 'Catppuccin Mocha'
 config.window_background_opacity = 0.95
 
 -- Font configuration
-config.font = wezterm.font('JetBrains Mono')
 config.font_size = 11.0
+config.font = wezterm.font_with_fallback {
+  'Fira Code',
+  'JetBrains Mono',
+}
 
 -- Window configuration
 config.window_padding = {
