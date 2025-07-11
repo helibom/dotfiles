@@ -15,6 +15,7 @@ config.font = wezterm.font_with_fallback {
   'Fira Code',
   'JetBrains Mono',
 }
+config.warn_about_missing_glyphs = false
 
 -- Window configuration
 config.window_padding = {
