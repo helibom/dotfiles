@@ -6,3 +6,10 @@
 
 [git_metrics]
   disabled = false
+
+
+[nix_shell]
+	disabled = false
+	impure_msg = ''
+	unknown_msg = '[unknown shell](bold yellow)'
+	format = 'via [$symbol(\($name\))]($style) '
