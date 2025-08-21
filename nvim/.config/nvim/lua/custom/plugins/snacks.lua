@@ -1,10 +1,10 @@
-Banner = [[
-██░ ██╗███████╗██╗     ██╗██████╗  ██████╗ ███╗   ███╗
-██║ ██║██╔════╝██║     ██║██╔══██╗██╔═══██╗████╗ ████║
-███████║█████╗  ██║     ██║██████╔╝██║   ██║██╔████╔██║
-██╔══██║██╔══╝  ██║     ██║██╔══██╗██║   ██║██║╚██╔╝██║
-██║  ██║███████╗███████╗██║██████╔╝╚██████╔╝██║ ╚═╝ ██║
-╚═╝  ╚═╝╚══════╝╚══════╝╚═╝╚═════╝  ╚═════╝ ╚═╝     ╚═╝]]
+local getNvimSemVer = function ()
+	local v = vim.version.parse(vim.fn.system({'nvim', '--version'}), {strict=false})
+	if not v then
+		return "<unknown>"
+	end
+	return v.major .. "." .. v.minor .. "." .. v.patch
+end
 
 return {
 	"folke/snacks.nvim",
@@ -65,7 +65,8 @@ return {
 					{ icon = " ", key = "q", desc = "Quit", action = ":qa" },
 				},
 				-- Used by the `header` section
-				header = Banner,
+				-- header = Banner,
+				header = "Neovim v" .. getNvimSemVer(),
 			},
 			-- item field formatters
 			formats = {
