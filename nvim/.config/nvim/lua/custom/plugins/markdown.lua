@@ -1,7 +1,7 @@
 return {
 	{
 		"OXY2DEV/markview.nvim",
-		lazy = false,
+		lazy = true,
 		-- For blink.cmp's completion
 		-- source
 		-- dependencies = {

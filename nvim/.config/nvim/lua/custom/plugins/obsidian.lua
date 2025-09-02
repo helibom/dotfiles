@@ -3,7 +3,10 @@ return {
 		"epwalsh/obsidian.nvim",
 		version = "*", -- recommended, use latest release instead of latest commit
 		lazy = true,
-		enabled = false,
+		enabled = function()
+			local is_debian = vim.fn.system("grep -Ei 'debian|wsl' /etc/os-release") ~= ""
+			return not is_debian
+		end,
 		ft = "markdown",
 		-- Replace the above line with this if you only want to load obsidian.nvim for markdown files in your vault:
 		-- event = {
@@ -22,17 +25,17 @@ return {
 		opts = {
 			workspaces = {
 				{
-					name = "master-vault",
-					path = "~/homeWindows/obsidian/main",
+					name = "master",
+					path = "~/obsidian/master",
 					overrides = {
 						templates = {
-							folder = "~/homeWindows/obsidian/main/_Templates/",
+							folder = "~/obsidian/master/_Templates/",
 						},
 					},
 				},
 				{
 					name = "dev-vault",
-					path = "~/homeWindows/obsidian/dev",
+					path = "~/obsidian/dev/_Templates",
 				},
 			},
 			-- see below for full list of options 👇
